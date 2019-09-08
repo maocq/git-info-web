@@ -4,10 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ProjectsIssuesComponent } from './graphics/projects-issues/projects-issues.component';
+import {ProjectService} from './services/project.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProjectsIssuesComponent
   ],
   imports: [
     BrowserModule,
@@ -15,6 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
+    ProjectService
   ],
   bootstrap: [AppComponent]
 })
