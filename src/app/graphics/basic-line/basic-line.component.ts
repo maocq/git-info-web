@@ -67,7 +67,7 @@ export class BasicLineComponent implements OnInit {
       });
 
       this.options.series = series;
-      Highcharts.chart('container', this.options);
+      Highcharts.chart('containerb', this.options);
     });
   }
 
