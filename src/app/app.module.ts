@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ProjectsIssuesComponent } from './graphics/projects-issues/projects-issues.component';
 import {ProjectService} from './services/project.service';
+import { BasicLineComponent } from './graphics/basic-line/basic-line.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectsIssuesComponent
+    ProjectsIssuesComponent,
+    BasicLineComponent
   ],
   imports: [
     BrowserModule,
