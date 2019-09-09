@@ -11,6 +11,18 @@ export interface InfoIssue {
 }
 
 export class LineSerie {
-  constructor(public name: string, public data: any[]) {
+  constructor(public name: string, public data: number[][]) {
+  }
+}
+
+
+export interface User {
+  user: string;
+  count: number;
+}
+
+
+export class DataC {
+  constructor(public name: string, public y: number) {
   }
 }

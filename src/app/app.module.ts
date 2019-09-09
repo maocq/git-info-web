@@ -7,12 +7,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { ProjectsIssuesComponent } from './graphics/projects-issues/projects-issues.component';
 import {ProjectService} from './services/project.service';
 import { BasicLineComponent } from './graphics/basic-line/basic-line.component';
+import { ColumnsComponent } from './graphics/columns/columns.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectsIssuesComponent,
-    BasicLineComponent
+    BasicLineComponent,
+    ColumnsComponent
   ],
   imports: [
     BrowserModule,
