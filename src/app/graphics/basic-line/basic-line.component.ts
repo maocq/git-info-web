@@ -10,7 +10,7 @@ import {InfoIssue, IssuesStatus, LineSerie} from '../../models/issuesStatus';
 })
 export class BasicLineComponent implements OnInit {
 
-  public options = {
+  public options: any = {
     chart: {
       type: 'spline'
     },

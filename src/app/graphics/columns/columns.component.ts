@@ -10,7 +10,7 @@ import {DataC, IssuesStatus, LineSerie, User} from '../../models/issuesStatus';
 })
 export class ColumnsComponent implements OnInit {
 
-  public options = {
+  public options: any = {
     chart: {
       type: 'column'
     },
