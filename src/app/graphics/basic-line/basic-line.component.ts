@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import {ProjectService} from '../../services/project.service';
+import {InfoIssue, IssuesStatus, LineSerie} from '../../models/issuesStatus';
 
 @Component({
   selector: 'app-basic-line',
@@ -7,74 +9,66 @@ import * as Highcharts from 'highcharts';
   styleUrls: ['./basic-line.component.sass']
 })
 export class BasicLineComponent implements OnInit {
-  constructor() { }
+
+  public options = {
+    chart: {
+      type: 'spline'
+    },
+    title: {
+      text: 'Issues Projects'
+    },
+    subtitle: {
+      text: 'Status'
+    },
+    xAxis: {
+      type: 'datetime',
+      dateTimeLabelFormats: {
+        month: '%e. %b',
+        year: '%b'
+      },
+      title: {
+        text: 'Date'
+      }
+    },
+    yAxis: {
+      title: {
+        text: 'Number'
+      },
+      min: 0
+    },
+    tooltip: {
+      headerFormat: '<b>{series.name}</b><br>',
+      pointFormat: '{point.x:%e. %b}: - {point.y}'
+    },
+    plotOptions: {
+      spline: {
+        marker: {
+          enabled: true
+        }
+      }
+    },
+    colors: ['#6CF', '#39F', '#06C', '#036', '#000'],
+    series: []
+  };
+
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
 
-    Highcharts.chart('container', {
+    this.projectService.getPosts().subscribe((data: IssuesStatus[]) => {
+      console.log("Iniciando ...");
+      const series = [];
+      data.forEach((issue: IssuesStatus) => {
+        const dataSerie = [];
+        issue.infoIssue.forEach((info: InfoIssue) => {
+          dataSerie.push([Date.parse(info.date), info.count]);
+        });
+        series.push(new LineSerie(issue.status, dataSerie));
+      });
 
-      title: {
-        text: 'Solar Employment Growth by Sector, 2010-2016'
-      },
-
-      subtitle: {
-        text: 'Source: thesolarfoundation.com'
-      },
-
-      yAxis: {
-        title: {
-          text: 'Number of Employees'
-        }
-      },
-      legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'middle'
-      },
-
-      plotOptions: {
-        series: {
-          label: {
-            connectorAllowed: false
-          },
-          pointStart: 2010
-        }
-      },
-
-      series: [{
-        name: 'Installation',
-        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-      }, {
-        name: 'Manufacturing',
-        data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-      }, {
-        name: 'Sales & Distribution',
-        data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-      }, {
-        name: 'Project Development',
-        data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-      }, {
-        name: 'Other',
-        data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-      }],
-
-      responsive: {
-        rules: [{
-          condition: {
-            maxWidth: 500
-          },
-          chartOptions: {
-            legend: {
-              layout: 'horizontal',
-              align: 'center',
-              verticalAlign: 'bottom'
-            }
-          }
-        }]
-      }
-
+      this.options.series = series;
+      Highcharts.chart('container', this.options);
     });
-
   }
 
 }

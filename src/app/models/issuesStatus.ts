@@ -9,3 +9,8 @@ export interface InfoIssue {
   date: string;
   count: number;
 }
+
+export class LineSerie {
+  constructor(public name: string, public data: any[]) {
+  }
+}

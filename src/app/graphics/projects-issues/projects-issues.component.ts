@@ -9,12 +9,9 @@ import {InfoIssue, IssuesStatus} from '../../models/issuesStatus';
 })
 export class ProjectsIssuesComponent implements OnInit {
 
-  constructor(private projectService: ProjectService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.projectService.getPosts().subscribe((data: InfoIssue[]) => {
-      console.log(data);
-    });
   }
 
 }
