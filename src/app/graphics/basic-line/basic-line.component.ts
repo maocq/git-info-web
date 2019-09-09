@@ -57,9 +57,9 @@ export class BasicLineComponent implements OnInit {
 
     this.projectService.getPosts().subscribe((data: IssuesStatus[]) => {
       console.log("Iniciando ...");
-      const series = [];
+      const series: LineSerie[] = [];
       data.forEach((issue: IssuesStatus) => {
-        const dataSerie = [];
+        const dataSerie: number[][] = [];
         issue.infoIssue.forEach((info: InfoIssue) => {
           dataSerie.push([Date.parse(info.date), info.count]);
         });
