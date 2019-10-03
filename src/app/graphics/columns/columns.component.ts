@@ -15,7 +15,7 @@ export class ColumnsComponent implements OnInit {
       type: 'column'
     },
     title: {
-      text: 'Browser market shares. January, 2018'
+      text: 'Issues for user'
     },
     subtitle: {
       text: 'Click the columns to view versions. Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
@@ -37,7 +37,7 @@ export class ColumnsComponent implements OnInit {
         borderWidth: 0,
         dataLabels: {
           enabled: true,
-          format: '{point.y:.1f}%'
+          format: '{point.y}'
         }
       }
     },
