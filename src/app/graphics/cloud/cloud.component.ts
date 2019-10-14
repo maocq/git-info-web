@@ -17,10 +17,10 @@ export class CloudComponent implements OnInit {
     series: [{
       type: 'wordcloud',
       data: [],
-      name: 'Occurrences'
+      name: 'Files'
     }],
     title: {
-      text: 'Wordcloud of Lorem Ipsum'
+      text: 'Files'
     }
   };
 

@@ -1,6 +1,16 @@
 <ng-container *ngIf="group">
 
   {{group | json}}
+
+  <ng-container *ngFor="let project of group.projects">
+    <p>{{project.name}} <small>{{project.createdAt}}</small></p>
+  </ng-container>
+
+
+  <p>Total commits: {{group.numbers.numberCommits}}</p>
+  <p>Total issues: {{group.numbers.numberIssues}}</p>
+  <p>Total pull request: {{group.numbers.numberPrs}}</p>
+  <p>Total authors: {{group.numbers.numberAuthors}}</p>
   <app-cloud [files]="group.files"></app-cloud>
 
 </ng-container>
