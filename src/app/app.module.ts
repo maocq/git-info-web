@@ -11,6 +11,7 @@ import { ColumnsComponent } from './graphics/columns/columns.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import {DataModule} from './data/data.module';
+import {GraphicsModule} from './graphics/graphics.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {DataModule} from './data/data.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    DataModule
+    DataModule,
+    GraphicsModule
   ],
   providers: [
     ProjectService
