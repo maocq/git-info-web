@@ -8,13 +8,15 @@ import { ProjectsIssuesComponent } from './graphics/projects-issues/projects-iss
 import {ProjectService} from './services/project.service';
 import { BasicLineComponent } from './graphics/basic-line/basic-line.component';
 import { ColumnsComponent } from './graphics/columns/columns.component';
+import { GroupsComponent } from './data/groups/groups.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectsIssuesComponent,
     BasicLineComponent,
-    ColumnsComponent
+    ColumnsComponent,
+    GroupsComponent
   ],
   imports: [
     BrowserModule,
