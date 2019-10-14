@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Group, IssuesStatus, User} from '../models/model';
+import {DetailGroup} from '../models/Group';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class ProjectService {
   }
 
   getGroup(id: number) {
-    return this.http.get<any[]>('http://localhost:9000/groups/' + id);
+    return this.http.get<DetailGroup>('http://localhost:9000/groups/' + id);
   }
 
   getPosts() {
