@@ -6,8 +6,9 @@ import {NotFoundComponent} from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'groups', loadChildren: () => import('./group/group.module').then(m => m.GroupModule) },
   { path: 'not-found', component: NotFoundComponent },
-  {path: '**', redirectTo: 'not-found', pathMatch: 'full'}
+  { path: '**', redirectTo: 'not-found', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -8,9 +8,9 @@ import { ProjectsIssuesComponent } from './graphics/projects-issues/projects-iss
 import {ProjectService} from './services/project.service';
 import { BasicLineComponent } from './graphics/basic-line/basic-line.component';
 import { ColumnsComponent } from './graphics/columns/columns.component';
-import { GroupsComponent } from './data/groups/groups.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import {DataModule} from './data/data.module';
 
 @NgModule({
   declarations: [
@@ -18,14 +18,14 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     ProjectsIssuesComponent,
     BasicLineComponent,
     ColumnsComponent,
-    GroupsComponent,
     HomeComponent,
     NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    DataModule
   ],
   providers: [
     ProjectService
