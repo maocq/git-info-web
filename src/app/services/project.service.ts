@@ -13,6 +13,10 @@ export class ProjectService {
     return this.http.get<Group[]>('http://localhost:9000/groups');
   }
 
+  getGroup(id: number) {
+    return this.http.get<any[]>('http://localhost:9000/groups/' + id);
+  }
+
   getPosts() {
     return this.http.get<IssuesStatus[]>('http://localhost:9000/issues');
   }
