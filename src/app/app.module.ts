@@ -7,7 +7,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {ProjectService} from './services/project.service';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import {DataModule} from './data/data.module';
 import {GraphicsModule} from './graphics/graphics.module';
 
 @NgModule({
@@ -20,7 +19,6 @@ import {GraphicsModule} from './graphics/graphics.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    DataModule,
     GraphicsModule
   ],
   providers: [
