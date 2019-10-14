@@ -1,15 +1,4 @@
 
-export interface Group {
-  id: number;
-  name: string;
-  createdAt: string;
-}
-
-
-
-
-
-//Validar
 export class LineSerie {
   constructor(public name: string, public data: number[][]) {
   }
@@ -18,6 +7,12 @@ export class LineSerie {
 export class DataC {
   constructor(public name: string, public y: number) {
   }
+}
+
+export interface Group {
+  id: number;
+  name: string;
+  createdAt: string;
 }
 
 export interface IssuesStatus {

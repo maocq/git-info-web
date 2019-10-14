@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import {ProjectService} from '../../services/project.service';
-import {DataC, User} from '../../models/issuesStatus';
+import {DataC, User} from '../../models/model';
 
 @Component({
   selector: 'app-columns',

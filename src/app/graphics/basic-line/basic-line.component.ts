@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import {ProjectService} from '../../services/project.service';
-import {InfoIssue, IssuesStatus, LineSerie} from '../../models/issuesStatus';
+import {InfoIssue, IssuesStatus, LineSerie} from '../../models/model';
 
 @Component({
   selector: 'app-basic-line',
@@ -56,7 +56,6 @@ export class BasicLineComponent implements OnInit {
   ngOnInit() {
 
     this.projectService.getPosts().subscribe((data: IssuesStatus[]) => {
-      console.log("Iniciando ...");
       const series: LineSerie[] = [];
       data.forEach((issue: IssuesStatus) => {
         const dataSerie: number[][] = [];
