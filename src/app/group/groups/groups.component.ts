@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ProjectService} from '../../services/project.service';
+import {Group} from '../../models/model';
 
 @Component({
   selector: 'app-groups',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./groups.component.sass']
 })
 export class GroupsComponent implements OnInit {
+  groups: Group[];
 
-  constructor() { }
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
+    this.projectService.getGroups().subscribe((data: Group[]) => this.groups = data);
   }
 
 }

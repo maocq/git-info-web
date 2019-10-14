@@ -1,3 +1,8 @@
-<p>groups works!</p>
-
-<app-info-groups></app-info-groups>
+<p>Groups</p>
+<ul>
+  <ng-container *ngFor="let group of groups">
+    <a routerLink="/groups/{{group.id}}">
+      <li>{{group.name}}</li>
+    </a>
+  </ng-container>
+</ul>
