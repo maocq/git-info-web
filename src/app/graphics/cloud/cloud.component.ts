@@ -2,6 +2,9 @@ import {Component, Input, OnInit} from '@angular/core';
 import {File} from '../../models/Group';
 import * as Highcharts from 'highcharts';
 
+let wordcloud = require('highcharts/modules/wordcloud');
+wordcloud(Highcharts);
+
 @Component({
   selector: 'app-cloud',
   templateUrl: './cloud.component.html',
@@ -24,8 +27,8 @@ export class CloudComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.options.series.data = this.files;
-    //Highcharts.chart('container-cloud', this.options);
+    this.options.series[0].data = this.files;
+    Highcharts.chart('container-cloud', this.options);
   }
 
 }
