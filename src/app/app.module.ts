@@ -11,6 +11,7 @@ import { ColumnsComponent } from './graphics/columns/columns.component';
 import { GroupsComponent } from './data/groups/groups.component';
 import { ProjectComponent } from './pages/project/project.component';
 import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeComponent } from './pages/home/home.component';
     ColumnsComponent,
     GroupsComponent,
     ProjectComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
