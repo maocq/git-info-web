@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ProjectService} from '../../services/project.service';
-import {InfoIssue, IssuesStatus} from '../../models/issuesStatus';
 
 @Component({
   selector: 'app-projects-issues',

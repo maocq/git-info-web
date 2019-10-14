@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {IssuesStatus, User} from '../models/issuesStatus';
+import {Group, IssuesStatus, User} from '../models/issuesStatus';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +8,10 @@ import {IssuesStatus, User} from '../models/issuesStatus';
 export class ProjectService {
 
   constructor(private http: HttpClient) { }
+
+  getGroups() {
+    return this.http.get<Group[]>('http://localhost:9000/groups');
+  }
 
   getPosts() {
     return this.http.get<IssuesStatus[]>('http://localhost:9000/issues');
