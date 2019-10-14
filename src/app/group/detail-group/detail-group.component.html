@@ -1,5 +1,6 @@
+<ng-container *ngIf="group">
 
-{{group | json}}
+  {{group | json}}
+  <app-cloud [files]="group.files"></app-cloud>
 
-
-<app-cloud></app-cloud>
+</ng-container>
