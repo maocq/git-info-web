@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {File} from '../../models/Group';
 import * as Highcharts from 'highcharts';
+import wordcloud from 'highcharts/modules/wordcloud';
 
-let wordcloud = require('highcharts/modules/wordcloud');
 wordcloud(Highcharts);
 
 @Component({

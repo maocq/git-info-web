@@ -1,0 +1,239 @@
+.loader-fixed
+  position: fixed !important
+  height: 38px !important
+  margin: auto
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+.cssload-dots
+  width: 140px
+  height: 140px
+  position: relative
+  margin: auto
+
+.cssload-dot
+  width: 0
+  height: 0
+  position: absolute
+  left: 0
+
+  &:before
+    content: ""
+    position: absolute
+    width: 34px
+    height: 34px
+    border-radius: 49px
+    transform: scale(0)
+
+  &:nth-child(1)
+    animation: cssload-dot-rotate-1 1.8s 0s linear infinite
+
+    &:before
+      animation: cssload-dot-move 1.8s 0s ease infinite
+      background-color: #b24ae3
+
+  &:nth-child(2)
+    animation: cssload-dot-rotate-2 1.8s 0.6s linear infinite
+
+    &:before
+      background-color: #64f4e6
+      animation: cssload-dot-move 1.8s 0.6s ease infinite
+
+  &:nth-child(3)
+    animation: cssload-dot-rotate-3 1.8s 1.2s linear infinite
+
+    &:before
+      background-color: #fbd301
+      animation: cssload-dot-move 1.8s 1.2s ease infinite
+
+@keyframes cssload-dot-move
+  0%
+    transform: scale(0)
+
+  18%,	22%,	90%
+    transform: scale(1)
+
+  100%
+    transform: scale(0)
+
+@-o-keyframes cssload-dot-move
+  0%
+    -o-transform: translateY(0)
+
+  18%,	22%
+    -o-transform: translateY(-68px)
+
+  40%,	100%
+    -o-transform: translateY(0)
+
+@-ms-keyframes cssload-dot-move
+  0%
+    -ms-transform: translateY(0)
+
+  18%,	22%
+    -ms-transform: translateY(-68px)
+
+  40%,	100%
+    -ms-transform: translateY(0)
+
+@-webkit-keyframes cssload-dot-move
+  0%
+    -webkit-transform: translateY(0)
+
+  18%,	22%
+    -webkit-transform: translateY(-68px)
+
+  40%,	100%
+    -webkit-transform: translateY(0)
+
+@-moz-keyframes cssload-dot-move
+  0%
+    -moz-transform: translateY(0)
+
+  18%,	22%
+    -moz-transform: translateY(-68px)
+
+  40%,	100%
+    -moz-transform: translateY(0)
+
+@keyframes cssload-dot-rotate-1
+  0%
+    transform: translateX(-10px)
+
+  100%
+    transform: translateX(140px)
+
+@-o-keyframes cssload-dot-rotate-1
+  0%
+    -o-transform: rotate(-105deg)
+
+  100%
+    -o-transform: rotate(270deg)
+
+@-ms-keyframes cssload-dot-rotate-1
+  0%
+    -ms-transform: rotate(-105deg)
+
+  100%
+    -ms-transform: rotate(270deg)
+
+@-webkit-keyframes cssload-dot-rotate-1
+  0%
+    -webkit-transform: rotate(-105deg)
+
+  100%
+    -webkit-transform: rotate(270deg)
+
+@-moz-keyframes cssload-dot-rotate-1
+  0%
+    -moz-transform: rotate(-105deg)
+
+  100%
+    -moz-transform: rotate(270deg)
+
+@keyframes cssload-dot-rotate-2
+  0%
+    transform: translateX(-10px)
+
+  100%
+    transform: translateX(140px)
+
+@-o-keyframes cssload-dot-rotate-2
+  0%
+    -o-transform: rotate(165deg)
+
+  100%
+    -o-transform: rotate(540deg)
+
+@-ms-keyframes cssload-dot-rotate-2
+  0%
+    -ms-transform: rotate(165deg)
+
+  100%
+    -ms-transform: rotate(540deg)
+
+@-webkit-keyframes cssload-dot-rotate-2
+  0%
+    -webkit-transform: rotate(165deg)
+
+  100%
+    -webkit-transform: rotate(540deg)
+
+@-moz-keyframes cssload-dot-rotate-2
+  0%
+    -moz-transform: rotate(165deg)
+
+  100%
+    -moz-transform: rotate(540deg)
+
+@keyframes cssload-dot-rotate-3
+  0%
+    transform: translateX(-10px)
+
+  100%
+    transform: translateX(140px)
+
+@-o-keyframes cssload-dot-rotate-3
+  0%
+    -o-transform: rotate(435deg)
+
+  100%
+    -o-transform: rotate(810deg)
+
+@-ms-keyframes cssload-dot-rotate-3
+  0%
+    -ms-transform: rotate(435deg)
+
+  100%
+    -ms-transform: rotate(810deg)
+
+@-webkit-keyframes cssload-dot-rotate-3
+  0%
+    -webkit-transform: rotate(435deg)
+
+  100%
+    -webkit-transform: rotate(810deg)
+
+@-moz-keyframes cssload-dot-rotate-3
+  0%
+    -moz-transform: rotate(435deg)
+
+  100%
+    -moz-transform: rotate(810deg)
+
+@keyframes cssload-dot-rotate-4
+  0%
+    transform: translateX(-10px)
+
+  100%
+    transform: translateX(140px)
+
+@-o-keyframes cssload-dot-rotate-4
+  0%
+    -o-transform: rotate(705deg)
+
+  100%
+    -o-transform: rotate(1080deg)
+
+@-ms-keyframes cssload-dot-rotate-4
+  0%
+    -ms-transform: rotate(705deg)
+
+  100%
+    -ms-transform: rotate(1080deg)
+
+@-webkit-keyframes cssload-dot-rotate-4
+  0%
+    -webkit-transform: rotate(705deg)
+
+  100%
+    -webkit-transform: rotate(1080deg)
+
+@-moz-keyframes cssload-dot-rotate-4
+  0%
+    -moz-transform: rotate(705deg)
+
+  100%
+    -moz-transform: rotate(1080deg)
