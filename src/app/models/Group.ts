@@ -40,3 +40,13 @@ export interface DetailGroup {
   lines: Lines;
   files: File[];
 }
+
+export interface Group {
+  id: number;
+  name: string;
+  createdAt: string;
+}
+
+export interface RegisterGroup {
+  name: string;
+}
