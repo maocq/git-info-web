@@ -6,6 +6,8 @@ import { GroupsComponent } from './groups/groups.component';
 import { DetailGroupComponent } from './detail-group/detail-group.component';
 import {GraphicsModule} from '../graphics/graphics.module';
 import {SharedModule} from '../shared/shared.module';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import {SharedModule} from '../shared/shared.module';
     CommonModule,
     GroupRoutingModule,
     GraphicsModule,
-    SharedModule
+    SharedModule,
+    MatGridListModule,
+    MatInputModule
   ]
 })
 export class GroupModule { }
