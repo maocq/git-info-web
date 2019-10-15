@@ -5,6 +5,7 @@ import { GroupRoutingModule } from './group-routing.module';
 import { GroupsComponent } from './groups/groups.component';
 import { DetailGroupComponent } from './detail-group/detail-group.component';
 import {GraphicsModule} from '../graphics/graphics.module';
+import {SharedModule} from '../shared/shared.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {GraphicsModule} from '../graphics/graphics.module';
   imports: [
     CommonModule,
     GroupRoutingModule,
-    GraphicsModule
+    GraphicsModule,
+    SharedModule
   ]
 })
 export class GroupModule { }

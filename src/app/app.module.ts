@@ -8,6 +8,7 @@ import {ProjectService} from './services/project.service';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import {GraphicsModule} from './graphics/graphics.module';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {GraphicsModule} from './graphics/graphics.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GraphicsModule
+    GraphicsModule,
+    SharedModule
   ],
   providers: [
     ProjectService
