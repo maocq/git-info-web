@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {ProjectService} from '../../services/project.service';
 import {Group} from '../../models/model';
+import {MatSnackBar} from '@angular/material';
 
 
 @Component({
@@ -18,19 +19,23 @@ export class RegisterGroupComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private snackBar: MatSnackBar,
     private projectService: ProjectService) { }
 
   ngOnInit() {
   }
 
   onSubmit(request) {
-
     this.disabledButton = true;
 
     this.projectService.registreGroup(request)
       .subscribe((group: Group) => {
-          this.form.reset();
-          this.disabledButton = false;
+        this.form.reset();
+        this.snackBar.open('Successful registration', 'OK', {duration: 2000});
+        this.disabledButton = false;
+      }, error => {
+        console.log(error);
+        this.snackBar.open('Error registration', 'OK', {duration: 2000});
       });
   }
 
