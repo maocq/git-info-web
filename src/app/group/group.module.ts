@@ -10,6 +10,7 @@ import {MatInputModule} from '@angular/material/input';
 import {RegisterGroupComponent} from './register-group/register-group.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {MatIconModule} from '@angular/material/icon';
     SharedModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ]
 })
 export class GroupModule { }

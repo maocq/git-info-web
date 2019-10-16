@@ -1,16 +1,14 @@
 
-<div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col-md-4">
-      <form class="git-form">
-        <mat-form-field>
-          <input matInput placeholder="Name Group">
-        </mat-form-field>
+<div class="row justify-content-md-center">
+  <div class="col-md-4">
+    <form class="git-form" [formGroup]="form">
+      <mat-form-field>
+        <input matInput placeholder="Name Group" formControlName="name">
+      </mat-form-field>
 
-        <button mat-mini-fab aria-label="Example icon-button with a heart icon">
-          <mat-icon>add</mat-icon>
-        </button>
-      </form>
-    </div>
+      <button mat-mini-fab [disabled]="form.invalid || disabledButton" (click)="onSubmit(form.value)">
+        <mat-icon>add</mat-icon>
+      </button>
+    </form>
   </div>
 </div>
