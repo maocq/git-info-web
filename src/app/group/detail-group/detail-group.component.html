@@ -1,5 +1,4 @@
 <ng-container *ngIf="group ; else loading">
-  {{group | json}}
   <ng-container *ngFor="let project of group.projects">
     <p>{{project.name}} <small>{{project.createdAt}}</small></p>
   </ng-container>

@@ -8,7 +8,8 @@ import {RegisterGroupComponent} from './register-group/register-group.component'
 const routes: Routes = [
   { path: '', component: GroupsComponent },
   { path: 'new', component: RegisterGroupComponent },
-  { path: ':id', component: DetailGroupComponent }
+  { path: ':id', component: DetailGroupComponent },
+  { path: ':id/projects', loadChildren: () => import('./project/project.module').then(m => m.ProjectModule) },
 ];
 
 @NgModule({
