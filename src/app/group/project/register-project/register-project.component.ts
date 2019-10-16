@@ -45,4 +45,8 @@ export class RegisterProjectComponent implements OnInit {
       });
   }
 
+  get id() {
+    return this.form.get('id');
+  }
+
 }

@@ -4,6 +4,7 @@
     <form class="git-form" [formGroup]="form">
       <mat-form-field>
         <input matInput type="number" placeholder="Name Group" formControlName="id">
+        <!--<span style="position: absolute;font-size: 10px;"*ngIf="(id.dirty || id.touched) && id.invalid && id.errors.required">Id is required.</span>-->
       </mat-form-field>
       <mat-form-field>
         <input matInput type="number" placeholder="Name Group" disabled value="{{groupId}}">
