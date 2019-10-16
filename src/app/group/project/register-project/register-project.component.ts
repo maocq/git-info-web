@@ -12,7 +12,6 @@ import {Project} from '../../../models/Group';
 })
 export class RegisterProjectComponent implements OnInit {
   groupId: number;
-  disabledButton = false;
 
   form = this.fb.group({
     id: ['', Validators.required],
@@ -31,21 +30,13 @@ export class RegisterProjectComponent implements OnInit {
 
   onSubmit(request) {
     this.form.patchValue({groupId: this.groupId});
-    this.disabledButton = true;
 
     this.projectService.registerProject(this.form.value)
       .subscribe((project: Project) => {
         this.form.reset();
-        this.snackBar.open('Successful registration', 'OK', {duration: 2000, verticalPosition: 'top'});
-        this.disabledButton = false;
-      }, error => {
-        console.log(error);
-        this.snackBar.open('Error registration', 'OK', {
-          duration: 200000,
-          verticalPosition: 'top',
-          horizontalPosition: 'right'
+        this.snackBar.open('Successful registration', '', {
+          duration: 5000, verticalPosition: 'top', horizontalPosition: 'right', panelClass: ['bg-success', 'text-white']
         });
-        this.disabledButton = false;
       });
   }
 

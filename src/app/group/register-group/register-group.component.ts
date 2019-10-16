@@ -11,7 +11,6 @@ import {MatSnackBar} from '@angular/material';
   styleUrls: ['./register-group.component.sass']
 })
 export class RegisterGroupComponent implements OnInit {
-  disabledButton = false;
 
   form = this.fb.group({
     name: ['', Validators.required]
@@ -26,17 +25,13 @@ export class RegisterGroupComponent implements OnInit {
   }
 
   onSubmit(request) {
-    this.disabledButton = true;
 
     this.projectService.registerGroup(request)
       .subscribe((group: Group) => {
         this.form.reset();
-        this.snackBar.open('Successful registration', 'OK', {duration: 2000, verticalPosition: 'top'});
-        this.disabledButton = false;
-      }, error => {
-        console.log(error);
-        this.snackBar.open('Error registration', 'OK', {duration: 2000, verticalPosition: 'top'});
-        this.disabledButton = false;
+        this.snackBar.open('Successful registration', '', {
+          duration: 5000, verticalPosition: 'top', horizontalPosition: 'right', panelClass: ['bg-success', 'text-white']
+        });
       });
   }
 

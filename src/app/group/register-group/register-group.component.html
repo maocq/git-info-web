@@ -7,7 +7,7 @@
         <app-form-error [control]="name"></app-form-error>
       </mat-form-field>
 
-      <button mat-mini-fab [disabled]="form.invalid || disabledButton" (click)="onSubmit(form.value)">
+      <button mat-mini-fab [disabled]="form.invalid" (click)="onSubmit(form.value)">
         <mat-icon>add</mat-icon>
       </button>
     </form>
