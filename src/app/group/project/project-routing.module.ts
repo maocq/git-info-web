@@ -4,7 +4,7 @@ import {RegisterProjectComponent} from './register-project/register-project.comp
 
 
 const routes: Routes = [
-  { path: '', component: RegisterProjectComponent }
+  { path: 'new', component: RegisterProjectComponent }
 ];
 
 @NgModule({
