@@ -50,3 +50,23 @@ export interface Group {
 export interface RegisterGroup {
   name: string;
 }
+
+export interface Project {
+  id: number;
+  description: string;
+  name: string;
+  nameWithNamespace: string;
+  path: string;
+  pathWithNamespace: string;
+  createdAt: string;
+  defaultBranch: string;
+  sshUrlToRepo: string;
+  httpUrlToRepo: string;
+  webUrl: string;
+  groupId: number;
+}
+
+export interface RegisterProject {
+  id: number;
+  groupId: number;
+}

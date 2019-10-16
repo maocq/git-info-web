@@ -28,7 +28,7 @@ export class RegisterGroupComponent implements OnInit {
   onSubmit(request) {
     this.disabledButton = true;
 
-    this.projectService.registreGroup(request)
+    this.projectService.registerGroup(request)
       .subscribe((group: Group) => {
         this.form.reset();
         this.snackBar.open('Successful registration', 'OK', {duration: 2000});
@@ -36,6 +36,7 @@ export class RegisterGroupComponent implements OnInit {
       }, error => {
         console.log(error);
         this.snackBar.open('Error registration', 'OK', {duration: 2000});
+        this.disabledButton = false;
       });
   }
 

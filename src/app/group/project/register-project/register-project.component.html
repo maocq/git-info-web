@@ -1,4 +1,17 @@
-<p>register-project works!</p>
-<mat-icon>add</mat-icon>
 
-{{groupId}}
+<div class="row justify-content-md-center">
+  <div class="col-md-4">
+    <form class="git-form" [formGroup]="form">
+      <mat-form-field>
+        <input matInput type="number" placeholder="Name Group" formControlName="id">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Name Group" disabled value="{{groupId}}">
+      </mat-form-field>
+
+      <button mat-mini-fab [disabled]="form.invalid || disabledButton" (click)="onSubmit(form.value)">
+        <mat-icon>add</mat-icon>
+      </button>
+    </form>
+  </div>
+</div>
