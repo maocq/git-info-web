@@ -36,11 +36,15 @@ export class RegisterProjectComponent implements OnInit {
     this.projectService.registerProject(this.form.value)
       .subscribe((project: Project) => {
         this.form.reset();
-        this.snackBar.open('Successful registration', 'OK', {duration: 2000});
+        this.snackBar.open('Successful registration', 'OK', {duration: 2000, verticalPosition: 'top'});
         this.disabledButton = false;
       }, error => {
         console.log(error);
-        this.snackBar.open('Error registration', 'OK', {duration: 2000});
+        this.snackBar.open('Error registration', 'OK', {
+          duration: 200000,
+          verticalPosition: 'top',
+          horizontalPosition: 'right'
+        });
         this.disabledButton = false;
       });
   }
