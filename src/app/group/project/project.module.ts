@@ -8,6 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatInputModule} from '@angular/material';
+import {SharedModule} from '../../shared/shared.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {MatInputModule} from '@angular/material';
     MatButtonModule,
     MatIconModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    SharedModule
   ]
 })
 export class ProjectModule { }

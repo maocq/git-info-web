@@ -4,6 +4,7 @@
     <form class="git-form" [formGroup]="form">
       <mat-form-field>
         <input matInput placeholder="Name Group" formControlName="name">
+        <app-form-error [control]="name"></app-form-error>
       </mat-form-field>
 
       <button mat-mini-fab [disabled]="form.invalid || disabledButton" (click)="onSubmit(form.value)">

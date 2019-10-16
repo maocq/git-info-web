@@ -40,4 +40,7 @@ export class RegisterGroupComponent implements OnInit {
       });
   }
 
+  get name() {
+    return this.form.get('name');
+  }
 }
