@@ -12,7 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatListModule} from '@angular/material';
+import {MatBadgeModule, MatCardModule, MatListModule} from '@angular/material';
 
 
 @NgModule({
@@ -31,7 +31,9 @@ import {MatListModule} from '@angular/material';
     MatIconModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatBadgeModule
   ]
 })
 export class GroupModule { }

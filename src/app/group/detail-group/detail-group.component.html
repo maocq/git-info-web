@@ -1,13 +1,39 @@
 <ng-container *ngIf="group ; else loading">
-  <ng-container *ngFor="let project of group.projects">
-    <p>{{project.name}} <small>{{project.createdAt}}</small></p>
-  </ng-container>
 
-  <p>Total commits: {{group.numbers.numberCommits}}</p>
-  <p>Total issues: {{group.numbers.numberIssues}}</p>
-  <p>Total pull request: {{group.numbers.numberPrs}}</p>
-  <p>Total authors: {{group.numbers.numberAuthors}}</p>
-  <app-cloud [files]="group.files"></app-cloud>
+  <div class="row">
+    <div class="col-md-6">
+
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let project of group.projects">
+          <h4>{{project.name | titlecase}} <small>{{project.createdAt}}</small></h4>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">Total commits: </div>
+    <div class="col-md-3"> <span class="badge badge-secondary">{{group.numbers.numberCommits}}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">Total issues: </div>
+    <div class="col-md-3"> <span class="badge badge-secondary">{{group.numbers.numberIssues}}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">Total pull request: </div>
+    <div class="col-md-3"> <span class="badge badge-secondary">{{group.numbers.numberPrs}}</span></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">Total authors: </div>
+    <div class="col-md-3"> <span class="badge badge-secondary">{{group.numbers.numberAuthors}}</span></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <mat-card>
+        <app-cloud [files]="group.files"></app-cloud>
+      </mat-card>
+    </div>
+  </div>
 
   <button routerLink="/groups/{{groupId}}/projects" mat-fab class="add-group-fixed">
     <mat-icon>add</mat-icon>

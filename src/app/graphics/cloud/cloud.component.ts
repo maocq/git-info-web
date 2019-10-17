@@ -20,7 +20,7 @@ export class CloudComponent implements OnInit {
       name: 'Files'
     }],
     title: {
-      text: 'Files'
+      text: ''
     }
   };
 
