@@ -29,8 +29,8 @@ export class RegisterGroupComponent implements OnInit {
     this.projectService.registerGroup(request)
       .subscribe((group: Group) => {
         this.form.reset();
-        this.snackBar.open('Successful registration', '', {
-          duration: 5000, verticalPosition: 'top', horizontalPosition: 'right', panelClass: ['bg-success', 'text-white']
+        this.snackBar.open('Successful registration', 'OK', {
+          duration: 5000, verticalPosition: 'top', horizontalPosition: 'right'
         });
       });
   }

@@ -34,8 +34,8 @@ export class RegisterProjectComponent implements OnInit {
     this.projectService.registerProject(this.form.value)
       .subscribe((project: Project) => {
         this.form.reset();
-        this.snackBar.open('Successful registration', '', {
-          duration: 5000, verticalPosition: 'top', horizontalPosition: 'right', panelClass: ['bg-success', 'text-white']
+        this.snackBar.open('Successful registration', 'OK', {
+          duration: 5000, verticalPosition: 'top', horizontalPosition: 'right'
         });
       });
   }
