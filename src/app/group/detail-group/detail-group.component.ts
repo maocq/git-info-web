@@ -10,6 +10,7 @@ import {DetailGroup} from '../../models/Group';
   styleUrls: ['./detail-group.component.sass']
 })
 export class DetailGroupComponent implements OnInit {
+  groupId: number;
   group: DetailGroup;
 
   constructor(
@@ -18,7 +19,10 @@ export class DetailGroupComponent implements OnInit {
 
   ngOnInit() {
     this.route.params
-      .pipe(switchMap(params => this.projectService.getGroup(+params.id)))
+      .pipe(switchMap(params => {
+        this.groupId = +params.id;
+        return this.projectService.getGroup(this.groupId);
+      }))
       .subscribe((group: DetailGroup) => this.group = group);
   }
 

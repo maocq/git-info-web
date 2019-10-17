@@ -8,6 +8,10 @@
   <p>Total pull request: {{group.numbers.numberPrs}}</p>
   <p>Total authors: {{group.numbers.numberAuthors}}</p>
   <app-cloud [files]="group.files"></app-cloud>
+
+  <button routerLink="/groups/{{groupId}}/projects" mat-fab class="add-group-fixed">
+    <mat-icon>add</mat-icon>
+  </button>
 </ng-container>
 
 <ng-template #loading>

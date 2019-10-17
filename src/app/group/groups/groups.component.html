@@ -1,15 +1,18 @@
 
 <ng-container *ngIf="groups ; else loading">
-  <p>Groups</p>
-  <ul>
-    <ng-container *ngFor="let group of groups">
-      <a routerLink="/groups/{{group.id}}">
-        <li>{{group.name}}</li>
-      </a>
-    </ng-container>
-  </ul>
 
+  <h2>Groups</h2>
+  <mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-list-item *ngFor="let group of groups" routerLink="/groups/{{group.id}}">
+      {{group.name}}
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-nav-list>
 
+  <button routerLink="/groups/new" mat-fab class="add-group-fixed">
+    <mat-icon>add</mat-icon>
+  </button>
 </ng-container>
 
 <ng-template #loading>
