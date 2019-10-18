@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoadingComponent } from './loading/loading.component';
 import { FormErrorComponent } from './form-error/form-error.component';
 import {MatSnackBarModule} from '@angular/material';
+import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import {MatSnackBarModule} from '@angular/material';
   ],
   imports: [
     CommonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    SweetAlert2Module.forRoot()
   ],
   exports: [
     LoadingComponent,

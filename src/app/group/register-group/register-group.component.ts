@@ -3,7 +3,7 @@ import {FormBuilder, Validators} from '@angular/forms';
 import {ProjectService} from '../../services/project.service';
 import {Group} from '../../models/model';
 import {MatSnackBar} from '@angular/material';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register-group',
@@ -13,7 +13,7 @@ import {MatSnackBar} from '@angular/material';
 export class RegisterGroupComponent implements OnInit {
 
   form = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(200)]]
+    name: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(200)]]
   });
 
   constructor(
@@ -29,9 +29,13 @@ export class RegisterGroupComponent implements OnInit {
     this.projectService.registerGroup(request)
       .subscribe((group: Group) => {
         this.form.reset();
-        this.snackBar.open('Successful registration', 'OK', {
-          duration: 5000, verticalPosition: 'top', horizontalPosition: 'right'
+        Swal.mixin({toast: true, position: 'top-end', showConfirmButton: false, timer: 5000}).fire({
+          type: 'success',
+          title: 'Successful registration'
         });
+        /*this.snackBar.open('Successful registration', 'OK', {
+          duration: 5000, verticalPosition: 'top', horizontalPosition: 'right'
+        });*/
       });
   }
 
