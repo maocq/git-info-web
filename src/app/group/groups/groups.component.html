@@ -1,10 +1,10 @@
 
 <ng-container *ngIf="groups ; else loading">
 
-  <h2>Groups</h2>
+  <h5>Groups</h5>
   <mat-nav-list>
     <mat-divider></mat-divider>
-    <mat-list-item *ngFor="let group of groups" routerLink="/groups/{{group.id}}">
+    <mat-list-item class="item-list" *ngFor="let group of groups" routerLink="/groups/{{group.id}}">
       {{group.name}}
     </mat-list-item>
     <mat-divider></mat-divider>
