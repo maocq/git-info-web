@@ -13,7 +13,6 @@ import {MatIconModule} from '@angular/material/icon';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatBadgeModule, MatCardModule, MatListModule} from '@angular/material';
-import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -34,8 +33,7 @@ import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
     MatSnackBarModule,
     MatListModule,
     MatCardModule,
-    MatBadgeModule,
-    SweetAlert2Module.forRoot()
+    MatBadgeModule
   ]
 })
 export class GroupModule { }
