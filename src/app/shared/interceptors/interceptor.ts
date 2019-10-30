@@ -13,6 +13,7 @@ export class Interceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     Swal.fire({
+      background: 'rgba(0,0,0,0)',
       allowEscapeKey: false,
       allowOutsideClick: false,
       onOpen: () => Swal.showLoading()
