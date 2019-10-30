@@ -1,7 +1,7 @@
 import {Observable, throwError} from 'rxjs';
-import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {catchError} from 'rxjs/operators';
+import {catchError, tap} from 'rxjs/operators';
 import {MatSnackBar} from '@angular/material';
 import Swal from 'sweetalert2';
 
@@ -13,16 +13,18 @@ export class Interceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     Swal.fire({
-      title: 'Loading',
       allowEscapeKey: false,
       allowOutsideClick: false,
       onOpen: () => Swal.showLoading()
     });
 
     const customReq = request.clone({
-
     });
+
     return next.handle(request).pipe(
+      tap((event: HttpEvent<any>) => {
+        if (event instanceof HttpResponse) { Swal.close(); }
+      }),
       catchError((error: HttpErrorResponse) => {
         const html = error.error.filds ? error.error.filds.map(e => '<br>' + e).join(',') : '';
 
