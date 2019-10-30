@@ -51,6 +51,11 @@ export interface RegisterGroup {
   name: string;
 }
 
+export interface ImpactGroup {
+  mounth: string;
+  count: number;
+}
+
 export interface Project {
   id: number;
   description: string;

@@ -23,7 +23,7 @@ export class BarGraphicComponent implements OnInit {
     },
     series: [{
       type: 'column',
-      colorByPoint: true,
+      colorByPoint: false,
       data: [],
       showInLegend: false
     }]

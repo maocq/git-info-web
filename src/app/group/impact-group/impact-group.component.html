@@ -1,3 +1,9 @@
-<p>impact-group works!</p>
+<ng-container *ngIf="impact ; else loading">
 
-<app-bar-graphic [categories]="['test']" [data]="[1]"></app-bar-graphic>
+  <app-bar-graphic [categories]="categories" [data]="data"></app-bar-graphic>
+
+</ng-container>
+
+<ng-template #loading>
+</ng-template>
+
