@@ -4,6 +4,7 @@ import {CloudComponent} from './cloud/cloud.component';
 import {BasicLineComponent} from './basic-line/basic-line.component';
 import {ColumnsComponent} from './columns/columns.component';
 import {ProjectsIssuesComponent} from './projects-issues/projects-issues.component';
+import { BarGraphicComponent } from './bar-graphic/bar-graphic.component';
 
 
 
@@ -12,7 +13,8 @@ import {ProjectsIssuesComponent} from './projects-issues/projects-issues.compone
     CloudComponent,
     BasicLineComponent,
     ColumnsComponent,
-    ProjectsIssuesComponent
+    ProjectsIssuesComponent,
+    BarGraphicComponent
   ],
   imports: [
     CommonModule
@@ -21,7 +23,8 @@ import {ProjectsIssuesComponent} from './projects-issues/projects-issues.compone
     CloudComponent,
     BasicLineComponent,
     ColumnsComponent,
-    ProjectsIssuesComponent
+    ProjectsIssuesComponent,
+    BarGraphicComponent
   ]
 })
 export class GraphicsModule { }
