@@ -13,13 +13,15 @@ import {MatIconModule} from '@angular/material/icon';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatBadgeModule, MatCardModule, MatListModule} from '@angular/material';
+import {ImpactGroupComponent} from './impact-group/impact-group.component';
 
 
 @NgModule({
   declarations: [
     GroupsComponent,
     DetailGroupComponent,
-    RegisterGroupComponent
+    RegisterGroupComponent,
+    ImpactGroupComponent
   ],
   imports: [
     CommonModule,
