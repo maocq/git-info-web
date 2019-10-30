@@ -2,20 +2,19 @@ import {Observable, throwError} from 'rxjs';
 import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {catchError, tap} from 'rxjs/operators';
-import {MatSnackBar} from '@angular/material';
 import Swal from 'sweetalert2';
 
 @Injectable()
 export class Interceptor implements HttpInterceptor {
 
-  constructor(private snackBar: MatSnackBar) { }
+  constructor() { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     Swal.fire({
-      background: 'rgba(0,0,0,0)',
       allowEscapeKey: false,
       allowOutsideClick: false,
+      customClass: { container: 'sweet-not-background' },
       onOpen: () => Swal.showLoading()
     });
 
@@ -35,9 +34,7 @@ export class Interceptor implements HttpInterceptor {
           type: 'warning',
           confirmButtonText: 'Ok'
         });
-        /*this.snackBar.open(error.error.message, error.error.errrorCode, {
-          duration: 10000, verticalPosition: 'top', horizontalPosition: 'right'
-        });*/
+
         return throwError(error);
       })
     );
