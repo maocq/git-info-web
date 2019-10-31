@@ -27,10 +27,12 @@ export class Interceptor implements HttpInterceptor {
       }),
       catchError((error: HttpErrorResponse) => {
         const html = error.error.filds ? error.error.filds.map(e => '<br>' + e).join(',') : '';
+        const errorCode = error.error.errrorCode ? error.error.errrorCode : 'No connection';
+        const errorMessage = error.error.message ? error.error.message : 'ERROR';
 
         Swal.fire({
-          title: error.error.errrorCode,
-          html: `${error.error.message} <small>${html}</small>`,
+          title: errorCode,
+          html: `${errorMessage} <small>${html}</small>`,
           type: 'warning',
           confirmButtonText: 'Ok'
         });
