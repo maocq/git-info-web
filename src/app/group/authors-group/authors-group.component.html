@@ -1,1 +1,41 @@
-<p>authors-group works!</p>
+
+<ng-container *ngIf="authors; else loading">
+
+  <div class="card-columns">
+
+    <div class="card" *ngFor="let author of authors">
+      <div class="card-body">
+        <div class="text-center">
+          <p><img class="rounded-circle" src="https://via.placeholder.com/80"></p>
+          <h5 class="card-title">{{author.user}}</h5>
+          <small>
+            <div class="row">
+              <div class="col-md-6">Total commits: </div>
+              <div class="col-md-6"><span class="badge badge-secondary">{{author.commits | number}}</span></div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">Total additions: </div>
+              <div class="col-md-6"><span class="badge badge-success">{{author.additions | number}}</span></div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">Total deletions: </div>
+              <div class="col-md-6"><span class="badge badge-danger">{{author.deletions | number}}</span></div>
+            </div>
+          </small>
+        </div>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">
+          <div class="row">
+            <div class="col-md-8">Total lines: </div>
+            <div class="col-md-4"><span class="badge badge-secondary">{{author.additions - author.deletions | number}}</span></div>
+          </div>
+        </small>
+      </div>
+    </div>
+
+  </div>
+
+</ng-container>
+<ng-template #loading>
+</ng-template>

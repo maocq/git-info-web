@@ -61,6 +61,14 @@ export interface InfoIssues {
   users: CategoryValue[];
 }
 
+export interface AuthorGroup {
+  user: string;
+  commits: number;
+  additions: number;
+  deletions: number;
+}
+
+/*
 export interface Project {
   id: number;
   description: string;
@@ -75,6 +83,7 @@ export interface Project {
   webUrl: string;
   groupId: number;
 }
+ */
 
 export interface RegisterProject {
   id: number;
