@@ -1,5 +1,7 @@
 <ng-container *ngIf="impact ; else loading">
 
+  <app-menu-group [groupId]="groupId"></app-menu-group>
+
   <div class="row">
     <div class="col-md-8">
       <app-bar-graphic [categories]="categories" [data]="data"></app-bar-graphic>

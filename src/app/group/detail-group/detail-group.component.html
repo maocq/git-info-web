@@ -1,10 +1,6 @@
 <ng-container *ngIf="group ; else loading">
 
-
-  <ul>
-    <a routerLink="/groups/{{groupId}}/impact"><li>Impact</li></a>
-    <a routerLink="/groups/{{groupId}}/issues"><li>Issues</li></a>
-  </ul>
+  <app-menu-group [groupId]="groupId"></app-menu-group>
 
   <div class="row">
     <div class="col-md-6">

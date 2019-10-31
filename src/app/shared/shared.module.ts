@@ -3,20 +3,25 @@ import { CommonModule } from '@angular/common';
 import { LoadingComponent } from './loading/loading.component';
 import { FormErrorComponent } from './form-error/form-error.component';
 import {MatSnackBarModule} from '@angular/material';
+import { MenuGroupComponent } from './menu-group/menu-group.component';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
   declarations: [
     LoadingComponent,
-    FormErrorComponent
+    FormErrorComponent,
+    MenuGroupComponent
   ],
   imports: [
     CommonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    RouterModule
   ],
   exports: [
     LoadingComponent,
-    FormErrorComponent
+    FormErrorComponent,
+    MenuGroupComponent
   ]
 })
 export class SharedModule { }
