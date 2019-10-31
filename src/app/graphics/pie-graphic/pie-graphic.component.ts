@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import * as Highcharts from 'highcharts';
+import {DataC} from '../../models/model';
 
 @Component({
   selector: 'app-pie-graphic',
@@ -7,6 +8,7 @@ import * as Highcharts from 'highcharts';
   styleUrls: ['./pie-graphic.component.sass']
 })
 export class PieGraphicComponent implements OnInit {
+  @Input() data: DataC[];
 
   public options: any = {
     chart: {
@@ -34,32 +36,14 @@ export class PieGraphicComponent implements OnInit {
     series: [{
       name: '',
       colorByPoint: true,
-      data: [
-        {
-          name: 'Chrome',
-          y: 61.41
-        }, {
-          name: 'Internet Explorer',
-          y: 110.84
-        }, {
-          name: 'Firefox',
-          y: 10.85
-        }, {
-          name: 'Edge',
-          y: 4.67
-        }, {
-          name: 'Safari',
-          y: 4.18
-        }, {
-          name: 'Other',
-          y: 7.05
-        }]
+      data: []
     }]
   }
 
   constructor() { }
 
   ngOnInit() {
+    this.options.series[0].data = this.data;
     Highcharts.chart('container-pie', this.options);
   }
 

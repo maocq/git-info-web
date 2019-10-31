@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {ProjectService} from '../../services/project.service';
 import {switchMap} from 'rxjs/operators';
 import {InfoIssues} from '../../models/Group';
+import {DataC} from '../../models/model';
 
 @Component({
   selector: 'app-issues-group',
@@ -11,6 +12,7 @@ import {InfoIssues} from '../../models/Group';
 })
 export class IssuesGroupComponent implements OnInit {
   groupId: number;
+  dataUsers: DataC[];
 
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +25,7 @@ export class IssuesGroupComponent implements OnInit {
         return this.projectService.getIssuesGroup(this.groupId);
       }))
       .subscribe((infoIssues: InfoIssues) => {
-          console.log(infoIssues);
+          this.dataUsers = infoIssues.users.map(c => new DataC(c.category, c.value));
       });
   }
 

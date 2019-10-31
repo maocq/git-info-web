@@ -9,6 +9,7 @@ export class DataC {
   }
 }
 
+//Borrar hacia abajo
 export interface Group {
   id: number;
   name: string;

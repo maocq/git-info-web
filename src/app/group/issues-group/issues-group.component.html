@@ -1,1 +1,8 @@
-<app-pie-graphic></app-pie-graphic>
+
+<ng-container *ngIf="dataUsers ; else loading">
+  <app-pie-graphic [data]="dataUsers"></app-pie-graphic>
+</ng-container>
+
+<ng-template #loading>
+</ng-template>
+
