@@ -56,6 +56,11 @@ export interface CategoryValue {
   value: number;
 }
 
+export interface InfoIssues {
+  issuesClosed: CategoryValue[];
+  users: CategoryValue[];
+}
+
 export interface Project {
   id: number;
   description: string;
