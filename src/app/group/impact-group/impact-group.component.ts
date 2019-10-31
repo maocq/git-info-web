@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ProjectService} from '../../services/project.service';
-import {ImpactGroup} from '../../models/Group';
+import {CategoryValue} from '../../models/Group';
 import {switchMap} from 'rxjs/operators';
 
 @Component({
@@ -11,7 +11,7 @@ import {switchMap} from 'rxjs/operators';
 })
 export class ImpactGroupComponent implements OnInit {
   groupId: number;
-  impact: ImpactGroup[];
+  impact: CategoryValue[];
   categories: string[];
   data: number[];
 
@@ -25,10 +25,10 @@ export class ImpactGroupComponent implements OnInit {
         this.groupId = +params.id;
         return this.projectService.getImpactGroup(this.groupId);
       }))
-      .subscribe((impact: ImpactGroup[]) => {
+      .subscribe((impact: CategoryValue[]) => {
         this.impact = impact;
-        this.categories = impact.map(im => im.mounth);
-        this.data = impact.map(im => im.count);
+        this.categories = impact.map(im => im.category);
+        this.data = impact.map(im => im.value);
       });
   }
 }

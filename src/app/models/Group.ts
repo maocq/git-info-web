@@ -51,9 +51,9 @@ export interface RegisterGroup {
   name: string;
 }
 
-export interface ImpactGroup {
-  mounth: string;
-  count: number;
+export interface CategoryValue {
+  category: string;
+  value: number;
 }
 
 export interface Project {
