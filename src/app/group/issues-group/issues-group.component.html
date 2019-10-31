@@ -1,6 +1,15 @@
 
 <ng-container *ngIf="dataUsers ; else loading">
-  <app-pie-graphic [data]="dataUsers"></app-pie-graphic>
+
+  <div class="row">
+    <div class="col-md-6">
+      <app-line-graphic></app-line-graphic>
+    </div>
+    <div class="col-md-6">
+      <app-pie-graphic [data]="dataUsers"></app-pie-graphic>
+    </div>
+  </div>
+
 </ng-container>
 
 <ng-template #loading>

@@ -7,6 +7,7 @@ import {ProjectsIssuesComponent} from './projects-issues/projects-issues.compone
 import { BarGraphicComponent } from './bar-graphic/bar-graphic.component';
 import { PolarGraphicComponent } from './polar-graphic/polar-graphic.component';
 import { PieGraphicComponent } from './pie-graphic/pie-graphic.component';
+import { LineGraphicComponent } from './line-graphic/line-graphic.component';
 
 
 
@@ -18,7 +19,8 @@ import { PieGraphicComponent } from './pie-graphic/pie-graphic.component';
     ProjectsIssuesComponent,
     BarGraphicComponent,
     PolarGraphicComponent,
-    PieGraphicComponent
+    PieGraphicComponent,
+    LineGraphicComponent
   ],
   imports: [
     CommonModule
@@ -30,7 +32,8 @@ import { PieGraphicComponent } from './pie-graphic/pie-graphic.component';
     ProjectsIssuesComponent,
     BarGraphicComponent,
     PolarGraphicComponent,
-    PieGraphicComponent
+    PieGraphicComponent,
+    LineGraphicComponent
   ]
 })
 export class GraphicsModule { }
