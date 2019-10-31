@@ -2,10 +2,10 @@
 <ng-container *ngIf="dataUsers ; else loading">
 
   <div class="row">
-    <div class="col-md-6">
-      <app-line-graphic></app-line-graphic>
+    <div class="col-md-8">
+      <app-line-graphic [series]="dataIssues"></app-line-graphic>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <app-pie-graphic [data]="dataUsers"></app-pie-graphic>
     </div>
   </div>

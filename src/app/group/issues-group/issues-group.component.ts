@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {ProjectService} from '../../services/project.service';
 import {switchMap} from 'rxjs/operators';
 import {InfoIssues} from '../../models/Group';
-import {DataC} from '../../models/model';
+import {DataC, LineSerie} from '../../models/model';
 
 @Component({
   selector: 'app-issues-group',
@@ -13,6 +13,7 @@ import {DataC} from '../../models/model';
 export class IssuesGroupComponent implements OnInit {
   groupId: number;
   dataUsers: DataC[];
+  dataIssues: LineSerie[];
 
   constructor(
     private route: ActivatedRoute,
@@ -25,7 +26,9 @@ export class IssuesGroupComponent implements OnInit {
         return this.projectService.getIssuesGroup(this.groupId);
       }))
       .subscribe((infoIssues: InfoIssues) => {
-          this.dataUsers = infoIssues.users.map(c => new DataC(c.category, c.value));
+        const dataIssues = infoIssues.issuesClosed.map(c => [Date.parse(c.category), c.value]);
+        this.dataIssues = [new LineSerie('Issues', dataIssues)];
+        this.dataUsers = infoIssues.users.map(c => new DataC(c.category, c.value));
       });
   }
 

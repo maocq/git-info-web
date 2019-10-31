@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import * as Highcharts from 'highcharts';
+import {LineSerie} from '../../models/model';
 
 @Component({
   selector: 'app-line-graphic',
@@ -7,6 +8,7 @@ import * as Highcharts from 'highcharts';
   styleUrls: ['./line-graphic.component.sass']
 })
 export class LineGraphicComponent implements OnInit {
+  @Input() series: LineSerie[];
 
   public options: any = {
     title: {
@@ -15,20 +17,16 @@ export class LineGraphicComponent implements OnInit {
     subtitle: {
       text: ''
     },
-    yAxis: {
-      title: {
-        text: 'Number of Employees'
-      }
+    xAxis: {
+      type: 'datetime'
     },
-    series: [{
-      name: 'Installation',
-      data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-    }],
+    series: [],
   }
 
     constructor() { }
 
   ngOnInit() {
+    this.options.series = this.series;
     Highcharts.chart('container-line', this.options);
   }
 
