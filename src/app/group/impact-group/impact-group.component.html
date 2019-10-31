@@ -1,6 +1,13 @@
 <ng-container *ngIf="impact ; else loading">
 
-  <app-bar-graphic [categories]="categories" [data]="data"></app-bar-graphic>
+  <div class="row">
+    <div class="col-md-8">
+      <app-bar-graphic [categories]="categories" [data]="data"></app-bar-graphic>
+    </div>
+    <div class="col-md-4">
+      <app-polar-graphic [categories]="categories" [data]="data"></app-polar-graphic>
+    </div>
+  </div>
 
 </ng-container>
 

@@ -1,16 +1,22 @@
 import {Component, Input, OnInit} from '@angular/core';
 import * as Highcharts from 'highcharts';
+import highchartsMore from "highcharts/highcharts-more";
+
+highchartsMore(Highcharts);
 
 @Component({
-  selector: 'app-bar-graphic',
-  templateUrl: './bar-graphic.component.html',
-  styleUrls: ['./bar-graphic.component.sass']
+  selector: 'app-polar-graphic',
+  templateUrl: './polar-graphic.component.html',
+  styleUrls: ['./polar-graphic.component.sass']
 })
-export class BarGraphicComponent implements OnInit {
+export class PolarGraphicComponent implements OnInit {
   @Input() categories: string[];
   @Input() data: number[];
 
   public options: any = {
+    chart: {
+      polar: true
+    },
     title: {
       text: ''
     },
@@ -33,7 +39,7 @@ export class BarGraphicComponent implements OnInit {
   ngOnInit() {
     this.options.xAxis.categories = this.categories;
     this.options.series[0].data = this.data;
-    Highcharts.chart('container-bar', this.options);
+    Highcharts.chart('container-polar', this.options);
   }
 
 }

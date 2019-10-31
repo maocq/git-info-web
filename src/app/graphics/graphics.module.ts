@@ -5,6 +5,7 @@ import {BasicLineComponent} from './basic-line/basic-line.component';
 import {ColumnsComponent} from './columns/columns.component';
 import {ProjectsIssuesComponent} from './projects-issues/projects-issues.component';
 import { BarGraphicComponent } from './bar-graphic/bar-graphic.component';
+import { PolarGraphicComponent } from './polar-graphic/polar-graphic.component';
 
 
 
@@ -14,7 +15,8 @@ import { BarGraphicComponent } from './bar-graphic/bar-graphic.component';
     BasicLineComponent,
     ColumnsComponent,
     ProjectsIssuesComponent,
-    BarGraphicComponent
+    BarGraphicComponent,
+    PolarGraphicComponent
   ],
   imports: [
     CommonModule
@@ -24,7 +26,8 @@ import { BarGraphicComponent } from './bar-graphic/bar-graphic.component';
     BasicLineComponent,
     ColumnsComponent,
     ProjectsIssuesComponent,
-    BarGraphicComponent
+    BarGraphicComponent,
+    PolarGraphicComponent
   ]
 })
 export class GraphicsModule { }
