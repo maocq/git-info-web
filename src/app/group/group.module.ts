@@ -14,6 +14,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatBadgeModule, MatCardModule, MatListModule} from '@angular/material';
 import {ImpactGroupComponent} from './impact-group/impact-group.component';
+import { IssuesGroupComponent } from './issues-group/issues-group.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {ImpactGroupComponent} from './impact-group/impact-group.component';
     GroupsComponent,
     DetailGroupComponent,
     RegisterGroupComponent,
-    ImpactGroupComponent
+    ImpactGroupComponent,
+    IssuesGroupComponent
   ],
   imports: [
     CommonModule,
