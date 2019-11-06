@@ -1,1 +1,28 @@
-<p>edit-group works!</p>
+
+<ng-container *ngIf="group ; else loading">
+
+  <div class="row justify-content-md-center">
+    <div class="col-md-4">
+      <h5 class="text-info">Update group</h5>
+
+      <form class="git-form" [formGroup]="form">
+        <mat-form-field>
+          <input matInput type="number" placeholder="Id Group" disabled value="{{group.id}}">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Name Group" formControlName="name" value="{{group.name}}">
+          <app-form-error [control]="name"></app-form-error>
+        </mat-form-field>
+
+        <button mat-mini-fab [disabled]="form.invalid" (click)="onSubmit(form.value)">
+          <mat-icon>add</mat-icon>
+        </button>
+      </form>
+    </div>
+  </div>
+
+</ng-container>
+
+<ng-template #loading>
+</ng-template>

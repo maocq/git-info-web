@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Group} from '../../models/model';
 import {ProjectService} from '../../services/project.service';
 import Swal from 'sweetalert2';
+import {Group} from '../../models/Group';
 
 @Component({
   selector: 'app-info-groups',

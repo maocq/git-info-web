@@ -15,11 +15,7 @@ export class ID {
 }
 
 //Borrar hacia abajo
-export interface Group {
-  id: number;
-  name: string;
-  createdAt: string;
-}
+
 
 export interface IssuesStatus {
   status: string;

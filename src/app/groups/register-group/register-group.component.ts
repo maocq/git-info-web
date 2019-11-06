@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {ProjectService} from '../../services/project.service';
-import {Group} from '../../models/model';
 import {MatSnackBar} from '@angular/material';
 import Swal from 'sweetalert2';
+import {Group} from '../../models/Group';
 
 @Component({
   selector: 'app-register-group',
@@ -33,9 +33,6 @@ export class RegisterGroupComponent implements OnInit {
           type: 'success',
           title: 'Successful registration'
         });
-        /*this.snackBar.open('Successful registration', 'OK', {
-          duration: 5000, verticalPosition: 'top', horizontalPosition: 'right'
-        });*/
       });
   }
 

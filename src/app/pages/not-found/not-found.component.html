@@ -1,3 +1,35 @@
-<h1>Not Found</h1>
-<h2>404</h2>
-<a routerLink="/">Go home</a>
+
+<div id="wrapper">
+
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+
+      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+          <i class="fa fa-bars"></i>
+        </button>
+        <ul class="navbar-nav ml-auto">
+          <div class="topbar-divider d-none d-sm-block"></div>
+          <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie</span>
+              <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="container-fluid">
+
+        <div class="text-center">
+          <div class="error mx-auto" data-text="404">404</div>
+          <p class="lead text-gray-800 mb-5">Page Not Found</p>
+          <p class="text-gray-500 mb-0">It looks like you found a glitch in the matrix...</p>
+          <a routerLink="/">&larr; Back to Dashboard</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

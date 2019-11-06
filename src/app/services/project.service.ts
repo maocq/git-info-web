@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Group, ID, IssuesStatus, User} from '../models/model';
-import {DetailGroup, CategoryValue, Project, RegisterGroup, RegisterProject, InfoIssues, AuthorGroup} from '../models/Group';
+import {ID, IssuesStatus, User} from '../models/model';
+import {DetailGroup, CategoryValue, Project, RegisterGroup, RegisterProject, InfoIssues, AuthorGroup, Group} from '../models/Group';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -13,6 +13,10 @@ export class ProjectService {
 
   registerGroup(request: RegisterGroup): Observable<Group> {
     return this.http.post<Group>('http://localhost:9000/group/register', request);
+  }
+
+  updateGroup(request: Group): Observable<Group> {
+    return this.http.post<Group>('http://localhost:9000/group/update', request);
   }
 
   deleteGroup(id: number): Observable<Group> {
@@ -30,6 +34,10 @@ export class ProjectService {
 
   getGroup(id: number): Observable<DetailGroup> {
     return this.http.get<DetailGroup>('http://localhost:9000/groups/' + id);
+  }
+
+  getInfoGroup(id: number): Observable<Group> {
+    return this.http.get<Group>('http://localhost:9000/groups/' + id + '/info');
   }
 
   getImpactGroup(id: number): Observable<CategoryValue[]> {

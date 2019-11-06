@@ -4,6 +4,7 @@ import {FormBuilder, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
 import {ProjectService} from '../../../services/project.service';
 import {Project} from '../../../models/Group';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register-project',
@@ -34,8 +35,9 @@ export class RegisterProjectComponent implements OnInit {
     this.projectService.registerProject(this.form.value)
       .subscribe((project: Project) => {
         this.form.reset();
-        this.snackBar.open('Successful registration', 'OK', {
-          duration: 5000, verticalPosition: 'top', horizontalPosition: 'right'
+        Swal.mixin({toast: true, position: 'top-end', showConfirmButton: false, timer: 5000}).fire({
+          type: 'success',
+          title: 'Successful update'
         });
       });
   }
