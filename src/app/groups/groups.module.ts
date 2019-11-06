@@ -7,13 +7,15 @@ import {RegisterGroupComponent} from './register-group/register-group.component'
 import {SharedModule} from '../shared/shared.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import { InfoGroupsComponent } from './info-groups/info-groups.component';
+import { GroupsComponent } from './groups.component';
 
 
 
 @NgModule({
   declarations: [
     RegisterGroupComponent,
-    InfoGroupsComponent
+    InfoGroupsComponent,
+    GroupsComponent
   ],
   imports: [
     CommonModule,
