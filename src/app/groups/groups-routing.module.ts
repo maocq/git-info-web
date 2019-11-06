@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {GroupsComponent} from './groups/groups.component';
 import {RegisterGroupComponent} from './register-group/register-group.component';
+import {InfoGroupsComponent} from './info-groups/info-groups.component';
 
 
 const routes: Routes = [
-  { path: '', component: GroupsComponent },
+  { path: '', component: InfoGroupsComponent },
   { path: 'new', component: RegisterGroupComponent }
 ];
 

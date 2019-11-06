@@ -3,11 +3,11 @@ import {Group} from '../../models/model';
 import {ProjectService} from '../../services/project.service';
 
 @Component({
-  selector: 'app-groups',
-  templateUrl: './groups.component.html',
-  styleUrls: ['./groups.component.sass']
+  selector: 'app-info-groups',
+  templateUrl: './info-groups.component.html',
+  styleUrls: ['./info-groups.component.sass']
 })
-export class GroupsComponent implements OnInit {
+export class InfoGroupsComponent implements OnInit {
   groups: Group[];
 
   constructor(private projectService: ProjectService) { }
