@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {DetailGroupComponent} from './detail-group/detail-group.component';
 import {ImpactGroupComponent} from './impact-group/impact-group.component';
 import {IssuesGroupComponent} from './issues-group/issues-group.component';
 import {AuthorsGroupComponent} from './authors-group/authors-group.component';
 import {GroupComponent} from './group.component';
+import {InfoGroupComponent} from './info-group/info-group.component';
 
 
 const routes: Routes =
@@ -12,7 +12,7 @@ const routes: Routes =
       path: '',
       component: GroupComponent,
       children: [
-        {path: ':id', component: DetailGroupComponent},
+        {path: ':id', component: InfoGroupComponent},
         {path: ':id/impact', component: ImpactGroupComponent},
         {path: ':id/issues', component: IssuesGroupComponent},
         {path: ':id/authors', component: AuthorsGroupComponent},

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import {DetailGroup} from '../../models/Group';
 import {ActivatedRoute} from '@angular/router';
 import {ProjectService} from '../../services/project.service';
 import {switchMap} from 'rxjs/operators';
-import {DetailGroup} from '../../models/Group';
 
 @Component({
-  selector: 'app-detail-group',
-  templateUrl: './detail-group.component.html',
-  styleUrls: ['./detail-group.component.sass']
+  selector: 'app-info-group',
+  templateUrl: './info-group.component.html',
+  styleUrls: ['./info-group.component.sass']
 })
-export class DetailGroupComponent implements OnInit {
+export class InfoGroupComponent implements OnInit {
   groupId: number;
   group: DetailGroup;
 
