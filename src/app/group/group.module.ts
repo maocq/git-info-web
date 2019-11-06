@@ -16,6 +16,7 @@ import {MatBadgeModule, MatCardModule, MatListModule} from '@angular/material';
 import {ImpactGroupComponent} from './impact-group/impact-group.component';
 import { IssuesGroupComponent } from './issues-group/issues-group.component';
 import { AuthorsGroupComponent } from './authors-group/authors-group.component';
+import { GroupComponent } from './group.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AuthorsGroupComponent } from './authors-group/authors-group.component';
     RegisterGroupComponent,
     ImpactGroupComponent,
     IssuesGroupComponent,
-    AuthorsGroupComponent
+    AuthorsGroupComponent,
+    GroupComponent
   ],
   imports: [
     CommonModule,
