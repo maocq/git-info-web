@@ -14,7 +14,7 @@ const routes: Routes =
       path: '',
       component: GroupComponent,
       children: [
-        {path: '', component: GroupsComponent},
+        //{path: '', component: GroupsComponent},
         {path: 'new', component: RegisterGroupComponent},
         {path: ':id', component: DetailGroupComponent},
         {path: ':id/impact', component: ImpactGroupComponent},
