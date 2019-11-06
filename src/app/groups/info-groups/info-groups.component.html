@@ -2,15 +2,16 @@
 <ng-container *ngIf="groups ; else loading">
 
   <h5>Groups</h5>
-  <mat-nav-list>
-    <mat-divider></mat-divider>
-    <mat-list-item class="item-list" *ngFor="let group of groups" routerLink="/groups/{{group.id}}">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let group of groups">
       {{group.name}}
-    </mat-list-item>
-    <mat-divider></mat-divider>
-  </mat-nav-list>
+      <button mat-icon-button class="float-right" (click)="delete(group.id)"><mat-icon>delete_sweep</mat-icon></button>
+      <button mat-icon-button class="float-right"><mat-icon>edit</mat-icon></button>
+      <button mat-icon-button class="float-right" routerLink="/groups/{{group.id}}"><mat-icon>pageview</mat-icon></button>
+    </li>
+  </ul>
 
-  <button routerLink="/groups/new" mat-fab class="add-group-fixed">
+  <button routerLink="/groups/new" mat-fab  color="primary" class="add-group-fixed">
     <mat-icon>add</mat-icon>
   </button>
 </ng-container>

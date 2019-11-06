@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Group, IssuesStatus, User} from '../models/model';
+import {Group, ID, IssuesStatus, User} from '../models/model';
 import {DetailGroup, CategoryValue, Project, RegisterGroup, RegisterProject, InfoIssues, AuthorGroup} from '../models/Group';
 import {Observable} from 'rxjs';
 
@@ -13,6 +13,11 @@ export class ProjectService {
 
   registerGroup(request: RegisterGroup): Observable<Group> {
     return this.http.post<Group>('http://localhost:9000/group/register', request);
+  }
+
+  deleteGroup(id: number): Observable<Group> {
+    const request = new ID(id);
+    return this.http.post<Group>('http://localhost:9000/group/delete', request);
   }
 
   registerProject(request: RegisterProject): Observable<Project> {

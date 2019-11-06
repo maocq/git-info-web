@@ -9,6 +9,11 @@ export class DataC {
   }
 }
 
+export class ID {
+  constructor(public id: number) {
+  }
+}
+
 //Borrar hacia abajo
 export interface Group {
   id: number;
