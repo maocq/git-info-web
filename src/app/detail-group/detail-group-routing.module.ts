@@ -3,14 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import {ImpactGroupComponent} from './impact-group/impact-group.component';
 import {IssuesGroupComponent} from './issues-group/issues-group.component';
 import {AuthorsGroupComponent} from './authors-group/authors-group.component';
-import {GroupComponent} from './group.component';
+import {DetailGroupComponent} from './detail-group.component';
 import {InfoGroupComponent} from './info-group/info-group.component';
 
 
 const routes: Routes =
   [{
       path: '',
-      component: GroupComponent,
+      component: DetailGroupComponent,
       children: [
         {path: ':id', component: InfoGroupComponent},
         {path: ':id/impact', component: ImpactGroupComponent},
@@ -24,4 +24,4 @@ const routes: Routes =
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class GroupRoutingModule { }
+export class DetailGroupRoutingModule { }

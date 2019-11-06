@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {GroupRoutingModule} from './group-routing.module';
+import {DetailGroupRoutingModule} from './detail-group-routing.module';
 import {GraphicsModule} from '../graphics/graphics.module';
 import {SharedModule} from '../shared/shared.module';
 import {MatInputModule} from '@angular/material/input';
@@ -13,7 +13,7 @@ import {MatBadgeModule, MatCardModule, MatListModule} from '@angular/material';
 import {ImpactGroupComponent} from './impact-group/impact-group.component';
 import { IssuesGroupComponent } from './issues-group/issues-group.component';
 import { AuthorsGroupComponent } from './authors-group/authors-group.component';
-import { GroupComponent } from './group.component';
+import { DetailGroupComponent } from './detail-group.component';
 import { InfoGroupComponent } from './info-group/info-group.component';
 
 
@@ -22,12 +22,12 @@ import { InfoGroupComponent } from './info-group/info-group.component';
     ImpactGroupComponent,
     IssuesGroupComponent,
     AuthorsGroupComponent,
-    GroupComponent,
+    DetailGroupComponent,
     InfoGroupComponent
   ],
   imports: [
     CommonModule,
-    GroupRoutingModule,
+    DetailGroupRoutingModule,
     GraphicsModule,
     SharedModule,
     MatInputModule,
@@ -40,4 +40,4 @@ import { InfoGroupComponent } from './info-group/info-group.component';
     MatBadgeModule
   ]
 })
-export class GroupModule { }
+export class DetailGroupModule { }
