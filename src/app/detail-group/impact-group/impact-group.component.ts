@@ -20,7 +20,7 @@ export class ImpactGroupComponent implements OnInit {
     private projectService: ProjectService) { }
 
   ngOnInit() {
-    this.route.params
+    this.route.parent.params
       .pipe(switchMap(params => {
         this.groupId = +params.id;
         return this.projectService.getImpactGroup(this.groupId);

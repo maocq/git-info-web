@@ -9,14 +9,14 @@ import {InfoGroupComponent} from './info-group/info-group.component';
 
 const routes: Routes =
   [{
-      path: '',
+      path: ':id',
       component: DetailGroupComponent,
       children: [
-        {path: ':id', component: InfoGroupComponent},
-        {path: ':id/impact', component: ImpactGroupComponent},
-        {path: ':id/issues', component: IssuesGroupComponent},
-        {path: ':id/authors', component: AuthorsGroupComponent},
-        {path: ':id/projects', loadChildren: () => import('./project/project.module').then(m => m.ProjectModule)},
+        {path: '', component: InfoGroupComponent},
+        {path: 'impact', component: ImpactGroupComponent},
+        {path: 'issues', component: IssuesGroupComponent},
+        {path: 'authors', component: AuthorsGroupComponent},
+        {path: 'projects', loadChildren: () => import('./project/project.module').then(m => m.ProjectModule)},
       ]
     }];
 

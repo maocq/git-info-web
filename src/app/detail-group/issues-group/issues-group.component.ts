@@ -20,7 +20,7 @@ export class IssuesGroupComponent implements OnInit {
     private projectService: ProjectService) { }
 
   ngOnInit() {
-    this.route.params
+    this.route.parent.params
       .pipe(switchMap(params => {
         this.groupId = +params.id;
         return this.projectService.getIssuesGroup(this.groupId);

@@ -25,7 +25,7 @@ export class RegisterProjectComponent implements OnInit {
     private projectService: ProjectService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => this.groupId = +params.id);
+    this.route.parent.params.subscribe(params => this.groupId = +params.id);
   }
 
   onSubmit(request) {
