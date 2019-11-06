@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {RegisterGroupComponent} from './register-group/register-group.component';
 import {InfoGroupsComponent} from './info-groups/info-groups.component';
 import {GroupsComponent} from './groups.component';
+import {EditGroupComponent} from './edit-group/edit-group.component';
 
 
 const routes: Routes =
@@ -11,7 +12,8 @@ const routes: Routes =
     component: GroupsComponent,
     children: [
       { path: '', component: InfoGroupsComponent },
-      { path: 'new', component: RegisterGroupComponent }
+      { path: 'new', component: RegisterGroupComponent },
+      { path: ':id/edit', component: EditGroupComponent }
     ]
   }];
 

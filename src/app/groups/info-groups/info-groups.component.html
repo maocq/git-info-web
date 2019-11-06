@@ -6,7 +6,7 @@
     <li class="list-group-item" *ngFor="let group of groups">
       {{group.name}}
       <button mat-icon-button class="float-right" (click)="delete(group.id)"><mat-icon>delete_sweep</mat-icon></button>
-      <button mat-icon-button class="float-right"><mat-icon>edit</mat-icon></button>
+      <button mat-icon-button class="float-right" routerLink="/groups/{{group.id}}/edit"><mat-icon>edit</mat-icon></button>
       <button mat-icon-button class="float-right" routerLink="/groups/{{group.id}}"><mat-icon>pageview</mat-icon></button>
     </li>
   </ul>

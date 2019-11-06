@@ -8,6 +8,7 @@ import {SharedModule} from '../shared/shared.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import { InfoGroupsComponent } from './info-groups/info-groups.component';
 import { GroupsComponent } from './groups.component';
+import { EditGroupComponent } from './edit-group/edit-group.component';
 
 
 
@@ -15,7 +16,8 @@ import { GroupsComponent } from './groups.component';
   declarations: [
     RegisterGroupComponent,
     InfoGroupsComponent,
-    GroupsComponent
+    GroupsComponent,
+    EditGroupComponent
   ],
   imports: [
     CommonModule,
