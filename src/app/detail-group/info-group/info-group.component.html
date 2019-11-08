@@ -1,6 +1,74 @@
 <ng-container *ngIf="group ; else loading">
 
   <div class="row">
+
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total commits</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">{{group.numbers.numberCommits | number}}</div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-calendar fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total lines ({{group.lines.additions | number}} - {{group.lines.deletions | number}})</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">{{group.lines.total | number}}</div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-info shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total authors</div>
+              <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{group.numbers.numberAuthors}}</div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total pull request:</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">{{group.numbers.numberPrs | number}}</div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-comments fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
     <div class="col-md-6">
       <h5>Projects</h5>
       <ul class="list-group">
@@ -9,37 +77,6 @@
         </li>
       </ul>
     </div>
-    <div class="col-md-6 numbers-project">
-      <h5>Information</h5>
-      <div class="row">
-        <div class="col-md-6">Total commits: </div>
-        <div class="col-md-6"><span class="badge badge-secondary">{{group.numbers.numberCommits | number}}</span></div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">Total lines: </div>
-        <div class="col-md-6"> <span class="badge badge-secondary">{{group.lines.total | number}}</span></div>
-      </div>
-      <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-6"> <span class="badge badge-success">{{group.lines.additions | number}}</span></div>
-      </div>
-      <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-6"> <span class="badge badge-danger">{{group.lines.deletions | number}}</span></div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">Total pull request: </div>
-        <div class="col-md-6"> <span class="badge badge-secondary">{{group.numbers.numberPrs | number}}</span></div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">Total authors: </div>
-        <div class="col-md-6"> <span class="badge badge-secondary">{{group.numbers.numberAuthors | number}}</span></div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="row">
     <div class="col-md-6">
       <app-cloud [files]="group.files"></app-cloud>
     </div>
