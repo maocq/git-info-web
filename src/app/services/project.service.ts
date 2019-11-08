@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ID, IssuesStatus, User} from '../models/model';
-import {DetailGroup, CategoryValue, Project, RegisterGroup, RegisterProject, InfoIssues, AuthorGroup, Group} from '../models/Group';
+import {DetailGroup, CategoryValue, Project, RegisterGroup, RegisterProject, InfoIssues, AuthorGroup, Group, ProjectFileLines} from '../models/Group';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -50,6 +50,10 @@ export class ProjectService {
 
   getAuthorsGroup(id: number): Observable<AuthorGroup[]> {
     return this.http.get<AuthorGroup[]>('http://localhost:9000/info-users');
+  }
+
+  getFilesHotSpots(id: number): Observable<ProjectFileLines[]> {
+    return this.http.get<ProjectFileLines[]>('http://localhost:9000/groups/' + id + '/files');
   }
 
 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import * as Highcharts from 'highcharts';
+import {SerieNameValue} from '../../models/model';
 
 @Component({
   selector: 'app-packedbubble-graphic',
@@ -7,6 +8,7 @@ import * as Highcharts from 'highcharts';
   styleUrls: ['./packedbubble-graphic.component.sass']
 })
 export class PackedbubbleGraphicComponent implements OnInit {
+  @Input() series: SerieNameValue[];
 
   public options: any = {
     chart: {
@@ -18,20 +20,19 @@ export class PackedbubbleGraphicComponent implements OnInit {
     },
     tooltip: {
       useHTML: true,
-      pointFormat: '<b>{point.name}:</b> {point.value}m CO<sub>2</sub>'
+      pointFormat: '<b>{point.name}:</b> {point.value}'
     },
     plotOptions: {
       packedbubble: {
         minSize: '20%',
         maxSize: '100%',
-        zMin: 0,
-        zMax: 1000,
+
         layoutAlgorithm: {
-          gravitationalConstant: 0.05,
+
           splitSeries: true,
           seriesInteraction: false,
           dragBetweenSeries: true,
-          parentNodeLimit: true
+          parentNodeLimit: false
         },
         dataLabels: {
           enabled: true,
@@ -49,30 +50,13 @@ export class PackedbubbleGraphicComponent implements OnInit {
         }
       }
     },
-    series: [{
-      name: 'Europe',
-      data: [{
-          name: 'Germany',
-          value: 767.1
-        },
-        {
-          name: 'Croatia',
-          value: 20.7
-        },
-        {
-          name: "Belgium",
-          value: 97.2
-        },
-        {
-          name: "Czech Republic",
-          value: 111.7
-        }]
-    }]
+    series: []
   };
 
   constructor() { }
 
   ngOnInit() {
+    this.options.series = this.series;
     Highcharts.chart('container-packedbubble', this.options);
   }
 

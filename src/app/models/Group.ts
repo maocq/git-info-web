@@ -68,6 +68,17 @@ export interface AuthorGroup {
   deletions: number;
 }
 
+export interface FileLines {
+  file: string;
+  lines: number;
+}
+
+export interface ProjectFileLines {
+  project: string;
+  lines: FileLines[];
+}
+
+
 /*
 export interface Project {
   id: number;
