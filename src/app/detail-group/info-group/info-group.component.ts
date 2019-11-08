@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {DetailGroup} from '../../models/Group';
+import {DetailGroup, Project} from '../../models/Group';
 import {ActivatedRoute} from '@angular/router';
 import {ProjectService} from '../../services/project.service';
 import {switchMap} from 'rxjs/operators';
+import Swal from 'sweetalert2';
+import {DeleteProject} from '../../models/model';
 
 @Component({
   selector: 'app-info-group',
@@ -24,6 +26,16 @@ export class InfoGroupComponent implements OnInit {
         return this.projectService.getGroup(this.groupId);
       }))
       .subscribe((group: DetailGroup) => this.group = group);
+  }
+
+  delete(id: number) {
+    Swal.fire({title: 'Are you sure?', type: 'warning', showCancelButton: true}).then((result) => {
+      if (result.value) {
+        this.projectService.deleteProject(new DeleteProject(id, this.groupId))
+          .pipe(switchMap((project: Project) => this.projectService.getGroup(this.groupId)))
+          .subscribe((group: DetailGroup) => this.group = group);
+      }
+    });
   }
 
 }

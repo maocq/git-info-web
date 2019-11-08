@@ -14,6 +14,11 @@ export class ID {
   }
 }
 
+export class DeleteProject {
+  constructor(public id: number, public groupId: number) {
+  }
+}
+
 export class NameValue {
   constructor(public name: string, public value: number) {
   }

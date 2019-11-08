@@ -73,7 +73,10 @@
       <h5>Projects</h5>
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let project of group.projects">
-          <h6>{{project.name | titlecase}} <small>{{project.createdAt}}</small></h6>
+          <h6>
+            {{project.name | titlecase}} <small>{{project.createdAt}}</small>
+            <button mat-icon-button class="float-right" (click)="delete(project.id)"><mat-icon>delete_sweep</mat-icon></button>
+          </h6>
         </li>
       </ul>
     </div>
