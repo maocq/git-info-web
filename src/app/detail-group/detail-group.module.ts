@@ -15,6 +15,7 @@ import { IssuesGroupComponent } from './issues-group/issues-group.component';
 import { AuthorsGroupComponent } from './authors-group/authors-group.component';
 import { DetailGroupComponent } from './detail-group.component';
 import { InfoGroupComponent } from './info-group/info-group.component';
+import { HotspotsGroupComponent } from './hotspots-group/hotspots-group.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { InfoGroupComponent } from './info-group/info-group.component';
     IssuesGroupComponent,
     AuthorsGroupComponent,
     DetailGroupComponent,
-    InfoGroupComponent
+    InfoGroupComponent,
+    HotspotsGroupComponent
   ],
   imports: [
     CommonModule,
