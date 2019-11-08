@@ -1,6 +1,27 @@
 
 <ng-container *ngIf="authors; else loading">
 
+  <div class="row">
+
+    <div class="col-md-4" *ngFor="let author of [1,2,3]">
+      <div class="card promoting-card">
+        <div class="card-body d-flex flex-row">
+          <img src="https://via.placeholder.com/80" class="rounded-circle mr-3" height="50px" width="50px" alt="avatar">
+          <div>
+            <h4 class="card-title mb-2">Anna Doe</h4>
+            <small class="card-text"><i class="far fa-clock pr-2"></i>07/24/2018</small>
+          </div>
+        </div>
+        <div class="card-body">
+            <i class="fas fa-share-alt text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top" title="Share this post"></i>
+            <i class="fas fa-clone text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top" title="I like it"></i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--
   <div class="card-columns">
 
     <div class="card" *ngFor="let author of authors">
@@ -35,7 +56,7 @@
     </div>
 
   </div>
-
+  -->
 </ng-container>
 <ng-template #loading>
 </ng-template>
