@@ -21,7 +21,7 @@ export class LineGraphicComponent implements OnInit {
       type: 'datetime'
     },
     series: [],
-  }
+  };
 
     constructor() { }
 

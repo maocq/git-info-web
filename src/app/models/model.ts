@@ -14,6 +14,16 @@ export class ID {
   }
 }
 
+export class NameValue {
+  constructor(public name: string, public value: number) {
+  }
+}
+
+export class SerieNameValue {
+  constructor(public name: string, public data: NameValue[]) {
+  }
+}
+
 //Borrar hacia abajo
 
 
