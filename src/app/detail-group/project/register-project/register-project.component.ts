@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
 import {ProjectService} from '../../../services/project.service';
 import {Project} from '../../../models/Group';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register-project',
@@ -23,7 +22,8 @@ export class RegisterProjectComponent implements OnInit {
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
-    private projectService: ProjectService) { }
+    private projectService: ProjectService,
+    private router: Router) { }
 
   ngOnInit() {
     this.route.parent.parent.params.subscribe(params => this.groupId = +params.id);
@@ -35,10 +35,7 @@ export class RegisterProjectComponent implements OnInit {
     this.projectService.registerProject(this.form.value)
       .subscribe((project: Project) => {
         this.form.reset();
-        Swal.mixin({toast: true, position: 'top-end', showConfirmButton: false, timer: 5000}).fire({
-          type: 'success',
-          title: 'Successful update'
-        });
+        this.router.navigate(['/groups', this.groupId]);
       });
   }
 

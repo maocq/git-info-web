@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {ProjectService} from '../../services/project.service';
 import {MatSnackBar} from '@angular/material';
-import Swal from 'sweetalert2';
 import {Group} from '../../models/Group';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register-group',
@@ -19,7 +19,8 @@ export class RegisterGroupComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
-    private projectService: ProjectService) { }
+    private projectService: ProjectService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -29,10 +30,13 @@ export class RegisterGroupComponent implements OnInit {
     this.projectService.registerGroup(request)
       .subscribe((group: Group) => {
         this.form.reset();
+        this.router.navigateByUrl('/groups');
+        /*
         Swal.mixin({toast: true, position: 'top-end', showConfirmButton: false, timer: 5000}).fire({
           type: 'success',
           title: 'Successful registration'
         });
+         */
       });
   }
 

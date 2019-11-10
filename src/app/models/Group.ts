@@ -47,6 +47,10 @@ export interface Group {
   createdAt: string;
 }
 
+export interface UpdatingGroup {
+  updating: boolean;
+}
+
 export interface RegisterGroup {
   name: string;
 }
@@ -76,6 +80,11 @@ export interface FileLines {
 export interface ProjectFileLines {
   project: string;
   lines: FileLines[];
+}
+
+export interface InfoUpdated {
+  message: string;
+  updated: number;
 }
 
 

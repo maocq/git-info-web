@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DetailGroup, Project} from '../../models/Group';
+import {DetailGroup, InfoUpdated, Project} from '../../models/Group';
 import {ActivatedRoute} from '@angular/router';
 import {ProjectService} from '../../services/project.service';
 import {switchMap} from 'rxjs/operators';
@@ -26,6 +26,15 @@ export class InfoGroupComponent implements OnInit {
         return this.projectService.getGroup(this.groupId);
       }))
       .subscribe((group: DetailGroup) => this.group = group);
+  }
+
+  update() {
+    this.projectService.updateInfoGroup(this.groupId)
+      .subscribe((info: InfoUpdated) => {
+        if (info.updated) {
+          this.projectService.getGroup(this.groupId).subscribe((group: DetailGroup) => this.group = group);
+        }
+      });
   }
 
   delete(id: number) {

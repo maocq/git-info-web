@@ -1,5 +1,9 @@
 <ng-container *ngIf="group ; else loading">
 
+  <button (click)="update()" mat-icon-button>
+    <mat-icon>sync</mat-icon>
+  </button>
+
   <div class="row">
 
     <div class="col-xl-3 col-md-6 mb-4">
