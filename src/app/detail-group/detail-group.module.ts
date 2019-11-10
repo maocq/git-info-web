@@ -9,7 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatBadgeModule, MatCardModule, MatListModule} from '@angular/material';
+import {MatBadgeModule, MatCardModule, MatListModule, MatProgressSpinnerModule} from '@angular/material';
 import {ImpactGroupComponent} from './impact-group/impact-group.component';
 import { IssuesGroupComponent } from './issues-group/issues-group.component';
 import { AuthorsGroupComponent } from './authors-group/authors-group.component';
@@ -39,7 +39,8 @@ import { HotspotsGroupComponent } from './hotspots-group/hotspots-group.componen
     MatSnackBarModule,
     MatListModule,
     MatCardModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatProgressSpinnerModule
   ]
 })
 export class DetailGroupModule { }

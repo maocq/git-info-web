@@ -1,6 +1,6 @@
 <ng-container *ngIf="group ; else loading">
 
-  <button (click)="update()" mat-icon-button>
+  <button [disabled]="isUpdatind" (click)="update()" mat-icon-button>
     <mat-icon>sync</mat-icon>
   </button>
 
@@ -74,7 +74,7 @@
 
   <div class="row">
     <div class="col-md-6">
-      <h5>Projects</h5>
+      <h5>Projects <mat-spinner *ngIf="isUpdatind" [diameter]="25"></mat-spinner></h5>
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let project of group.projects">
           <h6>

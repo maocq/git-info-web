@@ -11,12 +11,14 @@ export class Interceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    Swal.fire({
-      allowEscapeKey: false,
-      allowOutsideClick: false,
-      customClass: { container: 'sweet-not-background' },
-      onOpen: () => Swal.showLoading()
-    });
+    if (!request.url.includes('loading=true')) {
+      Swal.fire({
+        allowEscapeKey: false,
+        allowOutsideClick: false,
+        customClass: { container: 'sweet-not-background' },
+        onOpen: () => Swal.showLoading()
+      });
+    }
 
     const customReq = request.clone({
     });

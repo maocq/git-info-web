@@ -12,6 +12,7 @@ export interface Project {
   httpUrlToRepo: string;
   webUrl: string;
   groupId: number;
+  updating: boolean;
 }
 
 export interface Numbers {
@@ -47,7 +48,7 @@ export interface Group {
   createdAt: string;
 }
 
-export interface UpdatingGroup {
+export interface Updating {
   updating: boolean;
 }
 

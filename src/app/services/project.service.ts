@@ -11,7 +11,7 @@ import {
   AuthorGroup,
   Group,
   ProjectFileLines,
-  UpdatingGroup, InfoUpdated
+  Updating, InfoUpdated
 } from '../models/Group';
 import {Observable} from 'rxjs';
 
@@ -56,8 +56,8 @@ export class ProjectService {
     return this.http.post<InfoUpdated>('http://localhost:9000/group/update-projects', request);
   }
 
-  updatingInfoGroup(id: number): Observable<UpdatingGroup> {
-    return this.http.get<UpdatingGroup>('http://localhost:9000/groups/' + id + '/updating');
+  updatingInfoGroup(id: number): Observable<Updating> {
+    return this.http.get<Updating>('http://localhost:9000/groups/' + id + '/updating?loading=true');
   }
 
   getInfoGroup(id: number): Observable<Group> {

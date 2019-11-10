@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {DetailGroup, InfoUpdated, Project} from '../../models/Group';
 import {ActivatedRoute} from '@angular/router';
 import {ProjectService} from '../../services/project.service';
@@ -11,9 +11,11 @@ import {DeleteProject} from '../../models/model';
   templateUrl: './info-group.component.html',
   styleUrls: ['./info-group.component.sass']
 })
-export class InfoGroupComponent implements OnInit {
+export class InfoGroupComponent implements OnInit, OnDestroy {
   groupId: number;
   group: DetailGroup;
+  isUpdatind = false;
+  interval;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,7 +27,10 @@ export class InfoGroupComponent implements OnInit {
         this.groupId = +params.id;
         return this.projectService.getGroup(this.groupId);
       }))
-      .subscribe((group: DetailGroup) => this.group = group);
+      .subscribe((group: DetailGroup) => {
+        this.group = group;
+        this.updating();
+      });
   }
 
   update() {
@@ -45,6 +50,26 @@ export class InfoGroupComponent implements OnInit {
           .subscribe((group: DetailGroup) => this.group = group);
       }
     });
+  }
+
+  updating() {
+    this.isUpdatind = this.group.projects.some(p => p.updating);
+
+    if (this.isUpdatind) {
+      this.interval = setInterval(() => {
+          this.projectService.updatingInfoGroup(this.groupId).subscribe(r => {
+            if (this.isUpdatind !== r.updating) {
+              this.isUpdatind = r.updating;
+              clearInterval(this.interval);
+              this.projectService.getGroup(this.groupId).subscribe((group: DetailGroup) => this.group = group);
+            }
+          });
+      }, 2000);
+    }
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.interval);
   }
 
 }
