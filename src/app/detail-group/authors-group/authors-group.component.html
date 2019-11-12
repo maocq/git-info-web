@@ -1,62 +1,89 @@
 
-<ng-container *ngIf="authors; else loading">
+<ng-container *ngIf="users; else loading">
 
   <div class="row">
 
-    <div class="col-md-4" *ngFor="let author of [1,2,3]">
+    <div class="col-md-4 card-padding-bottom" *ngFor="let user of users">
       <div class="card promoting-card">
         <div class="card-body d-flex flex-row">
-          <img src="https://via.placeholder.com/80" class="rounded-circle mr-3" height="50px" width="50px" alt="avatar">
           <div>
-            <h4 class="card-title mb-2">Anna Doe</h4>
-            <small class="card-text"><i class="far fa-clock pr-2"></i>07/24/2018</small>
+            <h4 class="card-title mb-2"><small>{{user.user}}</small></h4>
+            <small class="card-text"><i class="far fa-clock pr-2"></i>{{user.firstCommit | date}} (Fist commit)</small><br>
+            <small class="card-text"><i class="far fa-clock pr-2"></i>{{user.lastCommit | date}} (Last commit)</small>
           </div>
         </div>
         <div class="card-body">
-            <i class="fas fa-share-alt text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top" title="Share this post"></i>
-            <i class="fas fa-clone text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top" title="I like it"></i>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total commits</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{user.commits | number}}</div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total <br> lines</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{user.total | number}}</div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="spacing">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Additions</div>
+                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{user.additions | number}}</div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Deletions</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{user.deletions | number}}</div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-trash fa-2x text-gray-300"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </div>
 
   </div>
 
-  <!--
-  <div class="card-columns">
-
-    <div class="card" *ngFor="let author of authors">
-      <div class="card-body">
-        <div class="text-center">
-          <p><img class="rounded-circle" src="https://via.placeholder.com/80"></p>
-          <h5 class="card-title">{{author.user}}</h5>
-          <small>
-            <div class="row">
-              <div class="col-md-6">Total commits: </div>
-              <div class="col-md-6"><span class="badge badge-secondary">{{author.commits | number}}</span></div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">Total additions: </div>
-              <div class="col-md-6"><span class="badge badge-success">{{author.additions | number}}</span></div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">Total deletions: </div>
-              <div class="col-md-6"><span class="badge badge-danger">{{author.deletions | number}}</span></div>
-            </div>
-          </small>
-        </div>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">
-          <div class="row">
-            <div class="col-md-8">Total lines: </div>
-            <div class="col-md-4"><span class="badge badge-secondary">{{author.additions - author.deletions | number}}</span></div>
-          </div>
-        </small>
-      </div>
-    </div>
-
-  </div>
-  -->
 </ng-container>
 <ng-template #loading>
 </ng-template>

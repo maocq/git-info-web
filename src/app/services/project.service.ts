@@ -8,10 +8,9 @@ import {
   RegisterGroup,
   RegisterProject,
   InfoIssues,
-  AuthorGroup,
   Group,
   ProjectFileLines,
-  Updating, InfoUpdated
+  Updating, InfoUpdated, InfoUser
 } from '../models/Group';
 import {Observable} from 'rxjs';
 
@@ -72,8 +71,8 @@ export class ProjectService {
     return this.http.get<InfoIssues>('http://localhost:9000/groups/' + id + '/issues');
   }
 
-  getAuthorsGroup(id: number): Observable<AuthorGroup[]> {
-    return this.http.get<AuthorGroup[]>('http://localhost:9000/info-users');
+  getUsersGroup(id: number): Observable<InfoUser[]> {
+    return this.http.get<InfoUser[]>('http://localhost:9000/groups/' + id + '/users');
   }
 
   getFilesHotSpots(id: number): Observable<ProjectFileLines[]> {

@@ -66,6 +66,16 @@ export interface InfoIssues {
   users: CategoryValue[];
 }
 
+export interface InfoUser {
+  user: string;
+  commits: number;
+  additions: number;
+  deletions: number;
+  total: number;
+  firstCommit: string;
+  lastCommit: string;
+}
+
 export interface AuthorGroup {
   user: string;
   commits: number;

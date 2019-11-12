@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ProjectService} from '../../services/project.service';
 import {switchMap} from 'rxjs/operators';
-import {AuthorGroup, DetailGroup} from '../../models/Group';
+import {InfoUser} from '../../models/Group';
 
 @Component({
   selector: 'app-authors-group',
@@ -11,7 +11,7 @@ import {AuthorGroup, DetailGroup} from '../../models/Group';
 })
 export class AuthorsGroupComponent implements OnInit {
   groupId: number;
-  authors: AuthorGroup[];
+  users: InfoUser[];
 
   constructor(
     private route: ActivatedRoute,
@@ -21,9 +21,9 @@ export class AuthorsGroupComponent implements OnInit {
     this.route.parent.params
       .pipe(switchMap(params => {
         this.groupId = +params.id;
-        return this.projectService.getAuthorsGroup(this.groupId);
+        return this.projectService.getUsersGroup(this.groupId);
       }))
-      .subscribe((authors: AuthorGroup[]) => this.authors = authors.slice(0, 5));
+      .subscribe((users: InfoUser[]) => this.users = users);
   }
 
 }
