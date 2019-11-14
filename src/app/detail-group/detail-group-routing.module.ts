@@ -6,6 +6,7 @@ import {AuthorsGroupComponent} from './authors-group/authors-group.component';
 import {DetailGroupComponent} from './detail-group.component';
 import {InfoGroupComponent} from './info-group/info-group.component';
 import {HotspotsGroupComponent} from './hotspots-group/hotspots-group.component';
+import {ActivityGroupComponent} from './activity-group/activity-group.component';
 
 
 const routes: Routes =
@@ -18,6 +19,7 @@ const routes: Routes =
         {path: 'issues', component: IssuesGroupComponent},
         {path: 'authors', component: AuthorsGroupComponent},
         {path: 'hotspots', component: HotspotsGroupComponent},
+        {path: 'activity', component: ActivityGroupComponent},
         {path: 'projects', loadChildren: () => import('./project/project.module').then(m => m.ProjectModule)},
       ]
     }];
