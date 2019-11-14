@@ -32,7 +32,7 @@ export class DependencyWheelGraphicComponent implements OnInit {
       dataLabels: {
         color: '#333',
         textPath: {
-          enabled: true,
+          enabled: false,
           attributes: {
             dy: 5
           }
