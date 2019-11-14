@@ -4,6 +4,11 @@ export class LineSerie {
   }
 }
 
+export class DependencyWheelData {
+  constructor(public from: string, public to: string, public weight: number) {
+  }
+}
+
 export class DataC {
   constructor(public name: string, public y: number) {
   }

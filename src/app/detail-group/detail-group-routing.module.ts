@@ -21,7 +21,7 @@ const routes: Routes =
         {path: 'authors', component: AuthorsGroupComponent},
         {path: 'hotspots', component: HotspotsGroupComponent},
         {path: 'activity', component: ActivityGroupComponent},
-        {path: 'prs', component: PrsGroupComponent},
+        {path: 'relations-prs', component: PrsGroupComponent},
         {path: 'projects', loadChildren: () => import('./project/project.module').then(m => m.ProjectModule)},
       ]
     }];

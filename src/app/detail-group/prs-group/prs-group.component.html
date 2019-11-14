@@ -1,2 +1,9 @@
-<p>prs-group works!</p>
-<app-dependency-wheel-graphic></app-dependency-wheel-graphic>
+<ng-container *ngIf="data ; else loading">
+
+  <app-dependency-wheel-graphic [data]="data"></app-dependency-wheel-graphic>
+
+</ng-container>
+
+<ng-template #loading>
+</ng-template>
+

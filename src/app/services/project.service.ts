@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {DeleteProject, ID, IssuesStatus, User} from '../models/model';
+import {DeleteProject, DependencyWheelData, ID, IssuesStatus, User} from '../models/model';
 import {
   DetailGroup,
   CategoryValue,
@@ -81,6 +81,10 @@ export class ProjectService {
 
   getActivityGroup(id: number): Observable<ActivityGroup> {
     return this.http.get<ActivityGroup>('http://localhost:9000/groups/' + id + '/activity');
+  }
+
+  getRelationsPRs(id: number): Observable<DependencyWheelData[]> {
+    return this.http.get<DependencyWheelData[]>('http://localhost:9000/groups/' + id + '/relation-prs');
   }
 
 
