@@ -9,6 +9,7 @@ import { PolarGraphicComponent } from './polar-graphic/polar-graphic.component';
 import { PieGraphicComponent } from './pie-graphic/pie-graphic.component';
 import { LineGraphicComponent } from './line-graphic/line-graphic.component';
 import { PackedbubbleGraphicComponent } from './packedbubble-graphic/packedbubble-graphic.component';
+import { DependencyWheelGraphicComponent } from './dependency-wheel-graphic/dependency-wheel-graphic.component';
 
 
 
@@ -22,7 +23,8 @@ import { PackedbubbleGraphicComponent } from './packedbubble-graphic/packedbubbl
     PolarGraphicComponent,
     PieGraphicComponent,
     LineGraphicComponent,
-    PackedbubbleGraphicComponent
+    PackedbubbleGraphicComponent,
+    DependencyWheelGraphicComponent
   ],
   imports: [
     CommonModule
@@ -36,7 +38,8 @@ import { PackedbubbleGraphicComponent } from './packedbubble-graphic/packedbubbl
     PolarGraphicComponent,
     PieGraphicComponent,
     LineGraphicComponent,
-    PackedbubbleGraphicComponent
+    PackedbubbleGraphicComponent,
+    DependencyWheelGraphicComponent
   ]
 })
 export class GraphicsModule { }
