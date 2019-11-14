@@ -17,6 +17,7 @@ import { DetailGroupComponent } from './detail-group.component';
 import { InfoGroupComponent } from './info-group/info-group.component';
 import { HotspotsGroupComponent } from './hotspots-group/hotspots-group.component';
 import { ActivityGroupComponent } from './activity-group/activity-group.component';
+import { PrsGroupComponent } from './prs-group/prs-group.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ActivityGroupComponent } from './activity-group/activity-group.componen
     DetailGroupComponent,
     InfoGroupComponent,
     HotspotsGroupComponent,
-    ActivityGroupComponent
+    ActivityGroupComponent,
+    PrsGroupComponent
   ],
   imports: [
     CommonModule,
