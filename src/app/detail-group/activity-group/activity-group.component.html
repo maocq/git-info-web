@@ -1,1 +1,16 @@
-<p>activity-group works!</p>
+<ng-container *ngIf="activityGroup ; else loading">
+
+  <div class="row">
+    <div class="col-md-5">
+      <app-polar-graphic [categories]="categoriesDays" [data]="dataDays"></app-polar-graphic>
+    </div>
+    <div class="col-md-7">
+      <app-bar-graphic [categories]="categoriesHours" [data]="dataHours"></app-bar-graphic>
+    </div>
+  </div>
+
+</ng-container>
+
+<ng-template #loading>
+</ng-template>
+

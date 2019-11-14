@@ -61,6 +61,11 @@ export interface CategoryValue {
   value: number;
 }
 
+export interface ActivityGroup {
+  hours: CategoryValue[];
+  daysOfWeak: CategoryValue[];
+}
+
 export interface InfoIssues {
   issuesClosed: CategoryValue[];
   users: CategoryValue[];

@@ -10,7 +10,7 @@ import {
   InfoIssues,
   Group,
   ProjectFileLines,
-  Updating, InfoUpdated, InfoUser
+  Updating, InfoUpdated, InfoUser, ActivityGroup
 } from '../models/Group';
 import {Observable} from 'rxjs';
 
@@ -77,6 +77,10 @@ export class ProjectService {
 
   getFilesHotSpots(id: number): Observable<ProjectFileLines[]> {
     return this.http.get<ProjectFileLines[]>('http://localhost:9000/groups/' + id + '/files');
+  }
+
+  getActivityGroup(id: number): Observable<ActivityGroup> {
+    return this.http.get<ActivityGroup>('http://localhost:9000/groups/' + id + '/activity');
   }
 
 
