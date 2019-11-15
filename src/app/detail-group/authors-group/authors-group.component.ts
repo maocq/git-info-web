@@ -12,6 +12,7 @@ import {InfoUser} from '../../models/Group';
 export class AuthorsGroupComponent implements OnInit {
   groupId: number;
   users: InfoUser[];
+  totalLines: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +24,10 @@ export class AuthorsGroupComponent implements OnInit {
         this.groupId = +params.id;
         return this.projectService.getUsersGroup(this.groupId);
       }))
-      .subscribe((users: InfoUser[]) => this.users = users);
+      .subscribe((users: InfoUser[]) => {
+        this.users = users;
+        this.totalLines = users.map(u => u.total).reduce((acc, current) => acc + current, 0);
+      });
   }
 
 }

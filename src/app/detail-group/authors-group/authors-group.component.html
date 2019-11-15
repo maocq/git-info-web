@@ -2,86 +2,56 @@
 <ng-container *ngIf="users; else loading">
 
   <div class="row">
-
-    <div class="col-md-4 card-padding-bottom" *ngFor="let user of users">
-      <div class="card promoting-card">
-        <div class="card-body d-flex flex-row">
-          <div>
-            <h4 class="card-title mb-2"><small>{{user.user}}</small></h4>
-            <small class="card-text"><i class="far fa-clock pr-2"></i>{{user.firstCommit | date}} (Fist commit)</small><br>
-            <small class="card-text"><i class="far fa-clock pr-2"></i>{{user.lastCommit | date}} (Last commit)</small>
-          </div>
+    <div class="col-md-12">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Authors</h6>
         </div>
         <div class="card-body">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="card h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total commits</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{user.commits | number}}</div>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="card h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total <br> lines</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{user.total | number}}</div>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr class="spacing">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="card h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Additions</div>
-                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{user.additions | number}}</div>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="card h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Deletions</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{user.deletions | number}}</div>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-trash fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+              <tr>
+                <th>User</th>
+                <th>Commits</th>
+                <th>Total Lines</th>
+                <th>%</th>
+                <th>Additions</th>
+                <th>Deletions</th>
+                <th><i class="far fa-clock pr-2"></i>First commit</th>
+                <th><i class="far fa-clock pr-2"></i>Last commit</th>
+              </tr>
+              </thead>
+              <tfoot>
+              <tr>
+                <th>User</th>
+                <th>Commits</th>
+                <th>Total Lines</th>
+                <th>%</th>
+                <th>Additions</th>
+                <th>Deletions</th>
+                <th><i class="far fa-clock pr-2"></i>First commit</th>
+                <th><i class="far fa-clock pr-2"></i>Last commit</th>
+              </tr>
+              </tfoot>
+              <tbody>
+              <tr *ngFor="let user of users">
+                <td>{{user.user}}</td>
+                <td class="font-weight-bold text-primary">{{user.commits | number}}</td>
+                <td class="font-weight-bold text-success">{{user.total | number}}</td>
+                <td class="font-weight-bold">{{user.total / totalLines | percent:'1.0-2'}}</td>
+                <td class="font-weight-bold text-info">{{user.additions | number}}</td>
+                <td class="font-weight-bold text-warning">{{user.deletions | number}}</td>
+                <td>{{user.firstCommit | date}}</td>
+                <td>{{user.lastCommit | date}}</td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 
 </ng-container>

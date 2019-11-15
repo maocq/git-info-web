@@ -37,7 +37,7 @@
               <tr *ngFor="let author of expertsProjects">
                 <td>{{author.project}}</td>
                 <td>{{author.author}}</td>
-                <td>{{author.percentage | percent}}</td>
+                <td>{{author.percentage | percent:'1.0-2'}}</td>
               </tr>
 
               </tbody>
