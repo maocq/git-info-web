@@ -8,6 +8,7 @@ import {InfoGroupComponent} from './info-group/info-group.component';
 import {HotspotsGroupComponent} from './hotspots-group/hotspots-group.component';
 import {ActivityGroupComponent} from './activity-group/activity-group.component';
 import {PrsGroupComponent} from './prs-group/prs-group.component';
+import {WeightsGroupComponent} from './weights-group/weights-group.component';
 
 
 const routes: Routes =
@@ -22,6 +23,7 @@ const routes: Routes =
         {path: 'hotspots', component: HotspotsGroupComponent},
         {path: 'activity', component: ActivityGroupComponent},
         {path: 'relations-prs', component: PrsGroupComponent},
+        {path: 'weights', component: WeightsGroupComponent},
         {path: 'projects', loadChildren: () => import('./project/project.module').then(m => m.ProjectModule)},
       ]
     }];
