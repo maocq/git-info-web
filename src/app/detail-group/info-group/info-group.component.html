@@ -74,18 +74,28 @@
 
   <div class="row">
     <div class="col-md-6">
-      <h5>Projects <mat-spinner *ngIf="isUpdatind" [diameter]="25"></mat-spinner></h5>
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let project of group.projects">
-          <h6>
-            {{project.name | titlecase}} <small>{{project.createdAt}}</small>
-            <button mat-icon-button class="float-right" (click)="delete(project.id)"><mat-icon>delete_sweep</mat-icon></button>
-          </h6>
-        </li>
-      </ul>
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Projects <mat-spinner *ngIf="isUpdatind" [diameter]="25"></mat-spinner></h6>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let project of group.projects">
+              <h6>
+                {{project.name | titlecase}} <small>{{project.createdAt}}</small>
+                <button mat-icon-button class="float-right" (click)="delete(project.id)"><mat-icon>delete_sweep</mat-icon></button>
+              </h6>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="col-md-6">
-      <app-cloud [files]="group.files"></app-cloud>
+      <div class="card shadow mb-4">
+        <div class="card-body">
+          <app-cloud [files]="group.files"></app-cloud>
+        </div>
+      </div>
     </div>
   </div>
 

@@ -3,10 +3,28 @@
 
   <div class="row">
     <div class="col-md-8">
-      <app-line-graphic [series]="dataIssues"></app-line-graphic>
+      <div class="card shadow mb-4">
+        <!--
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Experts</h6>
+        </div>
+        -->
+        <div class="card-body">
+          <app-line-graphic [series]="dataIssues"></app-line-graphic>
+        </div>
+      </div>
     </div>
     <div class="col-md-4">
-      <app-pie-graphic [data]="dataUsers"></app-pie-graphic>
+      <div class="card shadow mb-4">
+        <!--
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Experts</h6>
+        </div>
+        -->
+        <div class="card-body">
+          <app-pie-graphic [data]="dataUsers"></app-pie-graphic>
+        </div>
+      </div>
     </div>
   </div>
 

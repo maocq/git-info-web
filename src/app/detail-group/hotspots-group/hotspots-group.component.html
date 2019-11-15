@@ -1,8 +1,17 @@
 <ng-container *ngIf="series ; else loading">
 
   <div class="row justify-content-md-center">
-    <div class="col-md-8">
-      <app-packedbubble-graphic [series]="series"></app-packedbubble-graphic>
+    <div class="col-md-12">
+      <div class="card shadow mb-4">
+        <!--
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Experts</h6>
+        </div>
+        -->
+        <div class="card-body">
+          <app-packedbubble-graphic [series]="series"></app-packedbubble-graphic>
+        </div>
+      </div>
     </div>
   </div>
 
