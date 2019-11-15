@@ -10,7 +10,7 @@ import {
   InfoIssues,
   Group,
   ProjectFileLines,
-  Updating, InfoUpdated, InfoUser, ActivityGroup
+  Updating, InfoUpdated, InfoUser, ActivityGroup, ProjectWeightAuthors
 } from '../models/Group';
 import {Observable} from 'rxjs';
 
@@ -85,6 +85,10 @@ export class ProjectService {
 
   getRelationsPRs(id: number): Observable<DependencyWheelData[]> {
     return this.http.get<DependencyWheelData[]>('http://localhost:9000/groups/' + id + '/relation-prs');
+  }
+
+  getProjectsWeight(id: number): Observable<ProjectWeightAuthors[]> {
+    return this.http.get<ProjectWeightAuthors[]>('http://localhost:9000/groups/' + id + '/projects-weight');
   }
 
 

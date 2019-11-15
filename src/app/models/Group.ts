@@ -103,6 +103,18 @@ export interface InfoUpdated {
   updated: number;
 }
 
+export interface DetailWeightAuthor {
+  author: string;
+  number: number;
+  percentage: number;
+}
+
+export interface ProjectWeightAuthors {
+  project: string;
+  number: number;
+  authors: DetailWeightAuthor[];
+}
+
 
 /*
 export interface Project {

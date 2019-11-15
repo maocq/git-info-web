@@ -34,6 +34,12 @@ export class SerieNameValue {
   }
 }
 
+export class ExpertProject {
+  constructor(public author: string, public project: string, public percentage: number) {
+  }
+}
+
+
 //Borrar hacia abajo
 
 

@@ -1,1 +1,55 @@
-<p>weights-group works!</p>
+<ng-container *ngIf="data ; else loading">
+
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+        </div>
+        <div class="card-body">
+          <app-pie-graphic [data]="dataProjects"></app-pie-graphic>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Experts</h6>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+              <tr>
+                <th>Project</th>
+                <th>Author</th>
+                <th>Participation</th>
+              </tr>
+              </thead>
+              <tfoot>
+              <tr>
+                <th>Project</th>
+                <th>Author</th>
+                <th>Participation</th>
+              </tr>
+              </tfoot>
+              <tbody>
+              <tr *ngFor="let author of expertsProjects">
+                <td>{{author.project}}</td>
+                <td>{{author.author}}</td>
+                <td>{{author.percentage | percent}}</td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ng-container>
+
+<ng-template #loading>
+</ng-template>
+
